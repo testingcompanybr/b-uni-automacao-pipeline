@@ -1,0 +1,54 @@
+import { Given, When, Then } from '@cucumber/cucumber';
+import { expect } from 'chai';
+import { World } from '../../../Support/World';
+import { HomeActions } from '../../../Pages/Web/IBK/HomePageObject/HomeActions';
+import { HomeElementsMap } from '../../../Pages/Web/IBK/HomePageObject/HomeElementsMap';
+import { until, WebDriver } from 'selenium-webdriver';
+import { sleep } from '../../../Support/Utils';
+
+Given('estou na página Home do Internet Banking', async function (this: World) {
+  await sleep(3000);
+  const actual_driver = await this.driver as WebDriver;
+  const url = await actual_driver.getCurrentUrl();
+  expect(url).to.equal('https://ibk.stg.ser.buni.digital/inicio');
+});
+
+Then('verifico que estou logado', async function (this: World) {
+  await sleep(3000);
+  const actual_driver = await this.driver as WebDriver;
+  const url = await actual_driver.getCurrentUrl();
+  expect(url).to.equal('https://ibk.stg.ser.buni.digital/inicio');
+});
+
+When('clico no botão de Visualizar Saldo em Conta na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnAccountBalanceEye();
+});
+
+When('clico no botão de Extrato no menu lateral na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnExtract();
+});
+
+When('clico no perfil do usuário logado na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnProfile();
+});
+
+When('clico no botão Sair no menu dropdown do perfil do usuário na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnProfileLogout();
+});
+
+Then('o Saldo disponível em conta deve ser exibido', async function (this: World) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.wait(until.elementLocated(HomeElementsMap.txtAccountBalance), 10000);
+  const isVisible = await element.isDisplayed();
+
+  expect(isVisible).to.be.true;
+});
+
+When('clico no botão de Pix no menu lateral na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnPix();
+});
