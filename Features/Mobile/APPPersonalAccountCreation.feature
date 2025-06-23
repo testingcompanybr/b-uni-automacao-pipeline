@@ -26,6 +26,8 @@ Funcionalidade: Criação Conta Pessoa Física no Aplicativo
     E clico no botão Continuar na tela de Cadastrar do App
     E marquei o checkbox Aceitar Termos de Uso na tela de Cadastrar do App
     E clico no botão Continuar na tela de Cadastrar do App
+    E marquei o checkbox Declaro que li e estou de acordo com a política de privacidade na tela de Cadastrar do App
+    E clico no botão Continuar na tela de Cadastrar do App
     E preencho o campo Senha de acesso com o valor "@AAbbcc112233" na tela de Cadastrar do App
     E clico no botão Continuar na tela de Cadastrar do App
     E preencho o campo CEP com o valor "78095285" na tela de Cadastrar do App

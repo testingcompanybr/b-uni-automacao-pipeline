@@ -10,6 +10,11 @@ export class PixActions {
     await btn.click();
   }
 
+  async clickBtnAddKey() {
+    const btn = await this.driver.$(bySelector(PixElementsMap.btnAddKey));
+    await btn.click();
+  }
+
   async fillSearchUser(username: string) {
     const input = await this.driver.$(bySelector(PixElementsMap.inputSearchForUsers));
     await input.click();

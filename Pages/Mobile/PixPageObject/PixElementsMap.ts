@@ -7,4 +7,5 @@ export const PixElementsMap = {
   btnConfirm: "accessibility id:CONFIRMAR",
   keyboardPIN: (digit: string) => `android=new UiSelector().description("${digit}")`,
   btnShowTransactionProof: "accessibility id:VER COMPROVANTE",
+  btnAddKey: 'android=new UiSelector().description("")'
 };

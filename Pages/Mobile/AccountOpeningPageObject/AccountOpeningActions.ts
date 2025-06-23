@@ -59,6 +59,11 @@ export class AccountOpeningActions {
     await checkbox.click();
   }
 
+  async clickCheckBoxPolicy() {
+    const checkbox = await this.driver.$(bySelector(AccountOpeningElementsMap.checkBoxPolicy));
+    await checkbox.click();
+  }
+
   async fillPassword(password: string) {
     const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputPassword));
     await input.click();

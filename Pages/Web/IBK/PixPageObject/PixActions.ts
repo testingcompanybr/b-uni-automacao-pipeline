@@ -12,4 +12,9 @@ async clickBtnTransfer(): Promise<void> {
     await btnTransfer.click();
 }
 
+async clickBtnCreateKey(): Promise<void> {
+    const btnCreateKey: WebElement = await this.waitForElement(PixElementsMap.btnCreateKey);
+    await btnCreateKey.click();
+}
+
 }

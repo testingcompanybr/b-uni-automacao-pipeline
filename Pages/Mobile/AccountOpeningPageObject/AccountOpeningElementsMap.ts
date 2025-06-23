@@ -17,6 +17,8 @@ export const AccountOpeningElementsMap = {
   inputMotherName: 'android=new UiSelector().resourceId("onboardingMother_MotherScreen_motherNameInput")',
   //TERMOS DE USO----------------------------------------------------------------------------
   checkBoxTerms: "accessibility id:Declaro que li e estou de acordo com os termos de uso",
+  //POLÍTICA DE PRIVACIDADE-----------------------------------------------------------------
+  checkBoxPolicy: "accessibility id:Declaro que li e estou de acordo com a política de privacidade",
   //SENHA------------------------------------------------------------------------------------
   inputPassword: 'android=new UiSelector().resourceId("onboardingPassword_PasswordScreen_passwordInput")',
   //ENDEREÇO---------------------------------------------------------------------------------

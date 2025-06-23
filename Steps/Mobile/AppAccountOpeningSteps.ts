@@ -48,6 +48,11 @@ When('marquei o checkbox Aceitar Termos de Uso na tela de Cadastrar do App', asy
   await accountOpeningActions.clickCheckBoxTerms();
 });
 
+When('marquei o checkbox Declaro que li e estou de acordo com a política de privacidade na tela de Cadastrar do App', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as Browser);
+  await accountOpeningActions.clickCheckBoxPolicy();
+});
+
 When('preencho o campo Senha de acesso com o valor {string} na tela de Cadastrar do App', async function (this: World, password: string) {
   const accountOpeningActions = new AccountOpeningActions(this.driver as Browser);
   await accountOpeningActions.fillPassword(password);

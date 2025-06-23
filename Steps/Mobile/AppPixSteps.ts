@@ -8,6 +8,11 @@ When('clico no botão Transferir na tela de Pix do App', async function (this: W
   await pixActions.clickBtnTransfer();
 });
 
+When('clico no botão + na tela de Pix do App', async function (this: World) {
+  const pixActions = new PixActions(this.driver as Browser);
+  await pixActions.clickBtnAddKey();
+});
+
 When('preencho o campo Pesquisar usuários com o valor {string} na tela de Transferir Pix do App', async function (this: World, username: string) {
   const pixActions = new PixActions(this.driver as Browser);
   await pixActions.fillSearchUser(username);
