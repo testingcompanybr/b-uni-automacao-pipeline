@@ -39,19 +39,28 @@ Funcionalidade: Pix
     E clico no botão Enviar por email no modal de Comprovante da transação na tela de Comprovante
     E a mensagem "Comprovante enviado por email" deve ser apresentada na tela de Comprovante
 
-  # Cenário: Criação de Chave Pix
-  #   Dado estou na página Home do Internet Banking
-  #   Quando clico no botão de Pix no menu lateral na tela de Home
-  #   E clico no botão Criar chave na tela de Pix
-  #   E clico no botão Chave aleatória na tela de Nova Chave na etapa de Tipo de chave
-  #   E clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave
-  #   E digito o PIN "112233" no pop-up Digite o seu PIN na tela de Nova Chave na etapa de Confirmação
-  #   E clico no botão Confirmar no pop-up Digite o seu PIN na tela de Nova Chave na etapa de Confirmação
-  #   Então deve haver uma chave aleatória cadastrada na tela de Pix
-  #   E clico no botão de 3 pontos da chave aleatória na tela de Pix
-  #   E clico no botão Apagar chave Pix
-  #   E a chave aleatória deve ter sido excluida
+  Cenário: Criação de Chave Pix aleatória
+    Dado estou na página Home do Internet Banking
+    Quando clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão Criar chave na tela de Pix
+    E clico no botão Chave aleatória na tela de Nova Chave na etapa de Tipo de chave
+    E clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave
+    E digito o PIN "112233" no pop-up Digite o seu PIN na tela de Nova Chave na etapa de Confirmação
+    E clico no botão Confirmar no pop-up Digite o seu PIN na tela de Nova Chave na etapa de Confirmação
+    # Então deve haver uma chave aleatória cadastrada na tela de Pix
+    # E clico no botão de 3 pontos da chave aleatória na tela de Pix
+    # E clico no botão Apagar chave Pix
+    # E a chave aleatória deve ter sido excluida
 
-  # Cenário: Pix Copia e Cola
-  #   Dado estou na página Home do Internet Banking
-  #   Quando clico no botão de Pix no menu lateral na tela de Home
+  Cenário: Criação de Chave Pix CPF/CNPJ
+    Dado estou na página Home do Internet Banking
+    Quando clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão Criar chave na tela de Pix
+    E clico no botão CPF CNPJ na tela de Nova Chave na etapa de Tipo de chave
+    E clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave
+    E digito o PIN "112233" no pop-up Digite o seu PIN na tela de Nova Chave na etapa de Confirmação
+    E clico no botão Confirmar no pop-up Digite o seu PIN na tela de Nova Chave na etapa de Confirmação
+    # Então deve haver uma chave CPF CNPJ cadastrada na tela de Pix
+    # E clico no botão de 3 pontos da chave aleatória na tela de Pix
+    # E clico no botão Apagar chave Pix
+    # E a chave aleatória deve ter sido excluida

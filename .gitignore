@@ -2,3 +2,4 @@ node_modules
 cucumber-report.html
 allure-report
 allure-results
+*.rar

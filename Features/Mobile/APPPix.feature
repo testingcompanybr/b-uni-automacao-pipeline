@@ -46,16 +46,30 @@ Funcionalidade: Pix aplicativo
     E clico no botão Compartilhar na tela de Comprovante do App
     E clico no botão Imagem no pop-up de Compartilhar na tela de Comprovante do App
 
-  # Cenário: Criação de Chave Pix no App
-  #   Dado que estou na tela de Home do App
-  #   Quando clico em Próximo no dialogo de Acesso de localização do App
-  #   E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
-  #   E clico no botão Pix na tela de Home do App
-  #   E clico no botão Próximo na tela de instruções do Pix do App
-  #   E clico no botão Próximo na tela de instruções do Pix do App
-  #   E clico no botão Próximo na tela de instruções do Pix do App
-  #   E clico no botão + na tela de Pix do App
-  #   E clico no botão Chave aleatória na tela de Tipo de Chave do App
-  #   E clico no botão Continuar na tela de Tipo de Chave do App
-  #   E digito o PIN "112233" na tela de preenchimento do PIN do App
-  #   #Então deve haver uma chave aleatória cadastrada na tela de Pix do App
+  Cenário: Criação de Chave Pix aleatória no App
+    Dado que estou na tela de Home do App
+    Quando clico em Próximo no dialogo de Acesso de localização do App
+    E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
+    E clico no botão Pix na tela de Home do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão + na tela de Pix do App
+    E clico no botão Chave aleatória na tela de Tipo de Chave do App
+    E clico no botão Continuar na tela de Tipo de Chave do App
+    E digito o PIN "112233" na tela de preenchimento do PIN do App
+    # Então deve haver uma chave aleatória cadastrada na tela de Pix do App
+
+  Cenário: Criação de Chave Pix CPF/CNPJ no App
+    Dado que estou na tela de Home do App
+    Quando clico em Próximo no dialogo de Acesso de localização do App
+    E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
+    E clico no botão Pix na tela de Home do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão + na tela de Pix do App
+    E clico no botão CPF CNPJ com o valor "176.980.300-91" na tela de Tipo de Chave do App
+    E clico no botão Continuar na tela de Tipo de Chave do App
+    E digito o PIN "112233" na tela de preenchimento do PIN do App
+    # Então deve haver uma CPF CNPJ cadastrada na tela de Pix do App

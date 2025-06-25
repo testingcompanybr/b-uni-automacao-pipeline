@@ -15,4 +15,4 @@ Funcionalidade: Login no aplicativo
     E clico no botão Entrar na tela de Login do App na tela de Autorização do App
     E clico em Próximo no dialogo de Acesso de localização do App
     E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
-  # Então verifico que estou logado no Aplicativo
+    # Então verifico que estou logado no Aplicativo

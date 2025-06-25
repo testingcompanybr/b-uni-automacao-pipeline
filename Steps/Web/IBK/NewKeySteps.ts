@@ -10,6 +10,11 @@ When('clico no botão Chave aleatória na tela de Nova Chave na etapa de Tipo de
   await newKeyActions.clickBtnRandomKey();
 });
 
+When('clico no botão CPF CNPJ na tela de Nova Chave na etapa de Tipo de chave', async function (this: World) {
+  const newKeyActions = new NewKeyActions(this.driver as WebDriver);
+  await newKeyActions.clickBtnCPFCNPJKey();
+});
+
 When('clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave', async function (this: World) {
   const newKeyActions = new NewKeyActions(this.driver as WebDriver);
   await newKeyActions.clickBtnAdvance();

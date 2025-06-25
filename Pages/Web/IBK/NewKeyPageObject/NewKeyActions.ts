@@ -12,6 +12,11 @@ async clickBtnRandomKey(): Promise<void> {
     await btnRandomKey.click();
 }
 
+async clickBtnCPFCNPJKey(): Promise<void> {
+    const btnCPFCNPJKey: WebElement = await this.waitForElement(NewKeyElementsMap.btnCPFCNPJKey);
+    await btnCPFCNPJKey.click();
+}
+
 async clickBtnAdvance(): Promise<void> {
     const btnAdvance: WebElement = await this.waitForElement(NewKeyElementsMap.btnAdvance);
     await btnAdvance.click();

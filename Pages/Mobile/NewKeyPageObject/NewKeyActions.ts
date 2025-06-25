@@ -10,6 +10,11 @@ export class NewKeyActions {
     await btn.click();
   }
 
+  async clickBtnCPFCNPJKeyByCPFCNPJ(cpfcnpj: string) {
+    const btn = await this.driver.$(bySelector(NewKeyElementsMap.btnCPFCNPJKeyAccountByCPFCNPJ(cpfcnpj)));
+    await btn.click();
+  }
+
   async clickBtnContinue() {
     const btn = await this.driver.$(bySelector(NewKeyElementsMap.btnContinue));
     await btn.click();
