@@ -6,6 +6,7 @@ import { expect } from 'chai';
 import { By, WebDriver } from 'selenium-webdriver';
 import { sleep } from '../../../Support/Utils';
 
+//PESSOA FISICA---------------------------------------------------------------------------------------------------------------
 When('preencho o campo CPF com o valor {string} na tela de Abertura de Conta', async function (this: World, cpf: string) {
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
   await accountOpeningActions.fillCPFForm(cpf);
@@ -224,12 +225,6 @@ When('clico no botão Enviar na tela de Abertura de Conta na etapa de Identidade
   await accountOpeningActions.clickBtnSend();
 });
 
-When('acesso o QRCode apresentado na tela de Abertura de Conta na etapa de Identidade', async function (this: World) {
-  await sleep(5000);
-  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
-  await accountOpeningActions.saveQRCodeCanvas();
-});
-
 Then('o botão Continuar deve estar desabilitado na etapa de Validação', async function (this: World) {
   await sleep(1000);
   const actual_driver = await this.driver as WebDriver;
@@ -252,4 +247,170 @@ Then('o botão Continuar deve estar desabilitado na etapa de Endereço', async f
   const button = await actual_driver.findElement(By.css('button[testid="advance-address-submit"]'));
   const pointerEvents = await actual_driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");', button);
   expect(pointerEvents).to.equal('none');
+});
+
+//PESSOA JURIDICA---------------------------------------------------------------------------------------------------------------
+When('preencho o campo CNPJ com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, cnpj: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCNPJForm(cnpj);
+});
+
+When('preencho o campo CNPJ com o valor aleatório na tela de Abertura de Conta Juridica', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCNPJRandomForm();
+});
+
+When('preencho o campo Razão social com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, corporateReason: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCorporateReasonForm(corporateReason);
+});
+
+When('preencho o campo Nome fantasia com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, fantasyName: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillFantasyNameForm(fantasyName);
+});
+
+When('preencho o campo Email corporativo com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, corporateEmail: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCorporateEmailForm(corporateEmail);
+});
+
+When('preencho o campo Celular corporativo com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, corporateCellPhone: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCorporateCellPhoneForm(corporateCellPhone);
+});
+
+When('preencho o campo Faturamento médio mensal corporativo com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, corporateMonthlybilling: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCorporateMonthlyBillingForm(corporateMonthlybilling);
+});
+
+When('preencho o campo Quando sua empresa foi aberta? com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, corporationOpeningDate: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCorporationOpeningDateForm(corporationOpeningDate);
+});
+
+When('preencho o campo Ramo de atividade com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, corporationBranchActivity: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCorporationBranchActivityForm(corporationBranchActivity);
+});
+
+When('preencho o campo Categoria da empresa com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, corporationCategory: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCorporationCategoryForm(corporationCategory);
+});
+
+When('preencho o campo Inscrição estadual com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, stateRegistration: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillStateRegistrationForm(stateRegistration);
+});
+
+When('clico no botão Continuar na tela de Abertura de Conta Juridica', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnContinue();
+});
+
+When('preencho o campo Código de validação com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, validationCode: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillValidationCodeForm(validationCode);
+});
+
+When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa de Validação', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnContinueFinal();
+});
+
+When('preencho o campo CPF com o valor aleatório na tela de Abertura de Conta Juridica', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCPFRandomForm();
+});
+
+When('preencho o campo Nome completo com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, name: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillNameForm(name);
+});
+
+When('preencho o campo Nome da mãe com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, motherName: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillMotherNameForm(motherName);
+});
+
+When('preencho o campo Email com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, email: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillEmailForm(email);
+});
+
+When('preencho o campo Celular com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, cellphone: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCellphoneForm(cellphone);
+});
+
+When('preencho o campo Data de nascimento com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, birthDate: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillBirthDateForm(birthDate);
+});
+
+When('preencho o campo Faturamento médio mensal com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, monthlybilling: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillMonthlyBillingForm(monthlybilling);
+});
+
+When('preencho o campo Porcentagem do representante com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, representativePercentage: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillRepresentativePercentageForm(representativePercentage);
+});
+
+When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa de Representantes', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnContinueFinal();
+});
+
+When('marquei o checkbox Aceitar Termos de Uso na tela de Abertura de Conta Juridica', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickCheckBoxTerms();
+});
+
+When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa de Termos de Uso', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnContinueFinal();
+});
+
+When('marquei o checkbox Aceitar Política de Privacidade na tela de Abertura de Conta Juridica', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickCheckBoxPrivacyPolitic();
+});
+
+When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa de Politica de Privacidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnContinueFinal();
+});
+
+When('preencho o campo Senha de acesso com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, passwordAcess: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillPasswordAcessForm(passwordAcess);
+});
+
+When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa de Credenciais', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnContinueFinal();
+});
+
+When('preencho o campo CEP com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, cep: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillCEPForm(cep);
+});
+
+When('preencho o campo Número com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, numberAdress: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillNumberAdressForm(numberAdress);
+});
+
+When('preencho o campo Complemento com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, complement: string) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.fillComplementForm(complement);
+});
+
+When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa de Endereço da empresa', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnContinueFinalAdress();
 });

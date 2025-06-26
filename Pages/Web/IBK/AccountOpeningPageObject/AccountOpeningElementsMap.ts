@@ -9,12 +9,26 @@ export const AccountOpeningElementsMap = {
   fieldCellphone: By.xpath("//div[label[text()='Celular']]//input"),
   fieldBirthDate: By.xpath("//div[label[text()='Data de nascimento']]//input"),
   fieldMonthlyBilling: By.xpath("//div[label[text()='Faturamento médio mensal']]//input"),
+  //Primeiros Passos Juridico----------------------------------------------------------------------------
+  fieldCNPJ: By.xpath("//div[label[text()='CNPJ']]//input"),
+  fieldCorporateReason: By.xpath("//div[label[text()='Razão social']]//input"),
+  fieldFantasyName: By.xpath("//div[label[text()='Nome fantasia']]//input"),
+  fieldCorporateEmail: By.xpath("//div[label[text()='E-mail corporativo']]//input"),
+  fieldCorporateCellPhone: By.xpath("//div[label[text()='Celular']]//input"),
+  fieldCorporateMonthlyBilling: By.xpath("//div[label[text()='Faturamento médio mensal']]//input"),
+  fieldCorporationOpeningDate: By.xpath("//div[label[text()='Quando sua empresa foi aberta?']]//input"),
+  fieldBranchActivity: By.xpath("//div[label[text()='Ramo de atividade']]//input"),
+  fieldCorporationCategory: By.xpath("//div[label[text()='Categoria da empresa']]//input"),
+  fieldCNAE: By.xpath("//div[label[text()='CNAE']]//input"),
+  fieldStateRegistration: By.xpath("//div[label[text()='Inscrição Estadual']]//input"),
   btnContinue: By.xpath("//button[.//span[contains(text(), 'Continuar')]]"),
   msgError: By.css(".ant-message-notice-content .ant-message-error span:last-child"),
   //Validação--------------------------------------------------------------------------------------------
   fieldValidationCode: By.xpath("//div[label[text()='Código de validação']]//input"),
   btnContinueFinal: By.xpath("//div[contains(@class, 'advance_final__button')]//button[.//span[text()='Continuar']]"),
   msgErrorValidation: By.css('div.ant-message-custom-content.ant-message-error'),
+  //Representates juridicos------------------------------------------------------------------------------
+  fieldRepresentativePercentage: By.xpath("//div[label[text()='Porcentagem do representante']]//input"),
   //Termos de Uso----------------------------------------------------------------------------------------
   checkboxTerms: By.xpath("//label[.//span[text()='Aceitar Termos de uso']]//input[@type='checkbox']"),
   //Politica de Privacidade------------------------------------------------------------------------------

@@ -1,8 +1,6 @@
-import { WebDriver, WebElement, By, until } from 'selenium-webdriver';
+import { WebDriver, WebElement, By, until, Key } from 'selenium-webdriver';
 import { AccountOpeningElementsMap } from './AccountOpeningElementsMap';
-import { sleep, CPFGenerator } from '../../../../Support/Utils';
-import * as fs from 'fs';
-import * as path from 'path';
+import { sleep, CPFGenerator, CNPJGenerator } from '../../../../Support/Utils';
 
 export class AccountOpeningActions {constructor(private driver: WebDriver) {}
 
@@ -184,21 +182,66 @@ async waitTips(): Promise<void> {
     await sleep(5000);
 }
 
-async saveQRCodeCanvas(): Promise<void> {
+//Primeiros Passos Juridico-----------------------------------------------------------------------------------
+async fillCNPJForm(cnpj: string): Promise<void> {
+    const cnpjInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCNPJ);
+    await cnpjInput.sendKeys(cnpj);
+}
 
-  const canvas = await this.driver.findElement(By.css('canvas'));
+async fillCNPJRandomForm(): Promise<void> {
+    const cnpjInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCNPJ);
+    await cnpjInput.sendKeys(CNPJGenerator());
+}
 
-  const dataUrl = await this.driver.executeScript<string>(
-    "return arguments[0].toDataURL('image/png');",
-    canvas
-  );
+async fillCorporateReasonForm(corporateReason: string): Promise<void> {
+    const corporateReasonInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCorporateReason);
+    await corporateReasonInput.sendKeys(corporateReason);
+}
 
-  const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
+async fillFantasyNameForm(fantasyName: string): Promise<void> {
+    const fantasyNameInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldFantasyName);
+    await fantasyNameInput.sendKeys(fantasyName);
+}
 
-  const savePath = path.join(__dirname, '../../../../Assets/qrcode_verification.png');
-  fs.writeFileSync(savePath, base64Data, 'base64');
+async fillCorporateEmailForm(corporateEmail: string): Promise<void> {
+    const corporateEmailInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCorporateEmail);
+    await corporateEmailInput.sendKeys(corporateEmail);
+}
 
-  console.log('QR Code salvo com sucesso como PNG.');
+async fillCorporateCellPhoneForm(corporateCellPhone: string): Promise<void> {
+    const corporateCellPhoneInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCorporateCellPhone);
+    await corporateCellPhoneInput.sendKeys(corporateCellPhone);
+}
+
+async fillCorporateMonthlyBillingForm(corporateMonthlyBilling: string): Promise<void> {
+    const corporateMonthlyBillingInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCorporateMonthlyBilling);
+    await corporateMonthlyBillingInput.sendKeys(corporateMonthlyBilling);
+}
+
+async fillCorporationOpeningDateForm(corporationOpeningDate: string): Promise<void> {
+    const corporationOpeningDateInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCorporationOpeningDate);
+    await corporationOpeningDateInput.sendKeys(corporationOpeningDate);
+}
+
+async fillCorporationBranchActivityForm(corporationBranchActivity: string): Promise<void> {
+    const corporationBranchActivityInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldBranchActivity);
+    await corporationBranchActivityInput.click();
+}
+
+async fillCorporationCategoryForm(corporationCategory: string): Promise<void> {
+    const corporationCategoryInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCorporationCategory);
+    await corporationCategoryInput.sendKeys(corporationCategory);
+}
+
+async fillStateRegistrationForm(stateRegistration: string): Promise<void> {
+    const stateRegistrationInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldStateRegistration);
+    await stateRegistrationInput.sendKeys(stateRegistration);
+}
+
+//Representates juridicos------------------------------------------------------------------------------
+async fillRepresentativePercentageForm(representativePercentage: string): Promise<void> {
+    const representativePercentageInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldRepresentativePercentage);
+    await representativePercentageInput.sendKeys(representativePercentage);
 }
 
 }
