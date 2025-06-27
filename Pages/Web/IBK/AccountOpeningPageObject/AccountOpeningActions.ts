@@ -226,11 +226,15 @@ async fillCorporationOpeningDateForm(corporationOpeningDate: string): Promise<vo
 async fillCorporationBranchActivityForm(corporationBranchActivity: string): Promise<void> {
     const corporationBranchActivityInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldBranchActivity);
     await corporationBranchActivityInput.click();
+    const corporationBranchActivityOption: WebElement = await this.waitForElement(AccountOpeningElementsMap.optionBranchActivity(corporationBranchActivity));
+    await corporationBranchActivityOption.click();
 }
 
 async fillCorporationCategoryForm(corporationCategory: string): Promise<void> {
     const corporationCategoryInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCorporationCategory);
     await corporationCategoryInput.sendKeys(corporationCategory);
+    const corporationCategoryOption: WebElement = await this.waitForElement(AccountOpeningElementsMap.optionCorporationCategory(corporationCategory));
+    await corporationCategoryOption.click();
 }
 
 async fillStateRegistrationForm(stateRegistration: string): Promise<void> {
@@ -242,6 +246,22 @@ async fillStateRegistrationForm(stateRegistration: string): Promise<void> {
 async fillRepresentativePercentageForm(representativePercentage: string): Promise<void> {
     const representativePercentageInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldRepresentativePercentage);
     await representativePercentageInput.sendKeys(representativePercentage);
+}
+
+async fillRepresentativeCellphoneForm(representativeCellphone: string): Promise<void> {
+    const representativeCellphoneInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldRepresentativeCellphone);
+    await representativeCellphoneInput.sendKeys(representativeCellphone);
+}
+
+async fillRepresentativeMonthBillingForm(representativeMonthBilling: string): Promise<void> {
+    const representativeMonthBillingInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldRepresentativeMonthBilling);
+    await representativeMonthBillingInput.sendKeys(representativeMonthBilling);
+
+}
+
+async clickBtnContinueRepresentatitve(): Promise<void> {
+    const btnContinueRepresentatitve: WebElement = await this.waitForElement(AccountOpeningElementsMap.btnContinueRepresentative);
+    await btnContinueRepresentatitve.click();
 }
 
 }

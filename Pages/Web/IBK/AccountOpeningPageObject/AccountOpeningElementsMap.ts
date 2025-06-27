@@ -18,7 +18,9 @@ export const AccountOpeningElementsMap = {
   fieldCorporateMonthlyBilling: By.xpath("//div[label[text()='Faturamento médio mensal']]//input"),
   fieldCorporationOpeningDate: By.xpath("//div[label[text()='Quando sua empresa foi aberta?']]//input"),
   fieldBranchActivity: By.xpath("//div[label[text()='Ramo de atividade']]//input"),
+  optionBranchActivity: (option: string) => By.xpath(`//li[contains(@class, 'MuiAutocomplete-option') and normalize-space(text())='${option}']`),
   fieldCorporationCategory: By.xpath("//div[label[text()='Categoria da empresa']]//input"),
+  optionCorporationCategory: (option: string) => By.xpath(`//li[contains(@class, 'MuiAutocomplete-option') and normalize-space(text())='${option}']`),
   fieldCNAE: By.xpath("//div[label[text()='CNAE']]//input"),
   fieldStateRegistration: By.xpath("//div[label[text()='Inscrição Estadual']]//input"),
   btnContinue: By.xpath("//button[.//span[contains(text(), 'Continuar')]]"),
@@ -28,7 +30,10 @@ export const AccountOpeningElementsMap = {
   btnContinueFinal: By.xpath("//div[contains(@class, 'advance_final__button')]//button[.//span[text()='Continuar']]"),
   msgErrorValidation: By.css('div.ant-message-custom-content.ant-message-error'),
   //Representates juridicos------------------------------------------------------------------------------
+  fieldRepresentativeCellphone: By.xpath("//*[@id='rc-tabs-0-panel-10']/div/div/form/div[5]/div[1]/div/div/div/input"),
+  fieldRepresentativeMonthBilling: By.xpath("//*[@id='rc-tabs-0-panel-10']/div/div/form/div[5]/div[3]/div/div/div/input"),
   fieldRepresentativePercentage: By.xpath("//div[label[text()='Porcentagem do representante']]//input"),
+  btnContinueRepresentative: By.xpath("//*[@id='rc-tabs-0-panel-10']/div/div/form/div[9]/div[1]/button"),
   //Termos de Uso----------------------------------------------------------------------------------------
   checkboxTerms: By.xpath("//label[.//span[text()='Aceitar Termos de uso']]//input[@type='checkbox']"),
   //Politica de Privacidade------------------------------------------------------------------------------

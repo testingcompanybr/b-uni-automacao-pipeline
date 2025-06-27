@@ -342,7 +342,7 @@ When('preencho o campo Email com o valor {string} na tela de Abertura de Conta J
 
 When('preencho o campo Celular com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, cellphone: string) {
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
-  await accountOpeningActions.fillCellphoneForm(cellphone);
+  await accountOpeningActions.fillRepresentativeCellphoneForm(cellphone);
 });
 
 When('preencho o campo Data de nascimento com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, birthDate: string) {
@@ -352,7 +352,7 @@ When('preencho o campo Data de nascimento com o valor {string} na tela de Abertu
 
 When('preencho o campo Faturamento médio mensal com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, monthlybilling: string) {
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
-  await accountOpeningActions.fillMonthlyBillingForm(monthlybilling);
+  await accountOpeningActions.fillRepresentativeMonthBillingForm(monthlybilling);
 });
 
 When('preencho o campo Porcentagem do representante com o valor {string} na tela de Abertura de Conta Juridica', async function (this: World, representativePercentage: string) {
@@ -362,7 +362,7 @@ When('preencho o campo Porcentagem do representante com o valor {string} na tela
 
 When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa de Representantes', async function (this: World) {
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
-  await accountOpeningActions.clickBtnContinueFinal();
+  await accountOpeningActions.clickBtnContinueRepresentatitve();
 });
 
 When('marquei o checkbox Aceitar Termos de Uso na tela de Abertura de Conta Juridica', async function (this: World) {
@@ -414,3 +414,53 @@ When('clico no botão Continuar na tela de Abertura de Conta Juridica na etapa d
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
   await accountOpeningActions.clickBtnContinueFinalAdress();
 });
+
+When('começo o processo de verificação da IDWall na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  await sleep(5000);
+  const actual_driver = await this.driver as WebDriver;
+  const iframe = actual_driver.findElement(By.css(".idwall_container > iframe"));
+  await actual_driver.switchTo().frame(iframe);
+});
+
+When('clico no botão Começar verificação na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnStartVerification();
+});
+
+When('clico no botão Carregar um arquivo na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnUpload();
+});
+
+When('clico no botão Carteira de Motorista - CNH na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnCNH();
+});
+
+When('clico no botão Digital na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnCNHDigital();
+});
+
+When('clico no botão Entendi na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnUnderstand();
+});
+
+When('clico no botão Pular na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnSkip();
+});
+
+When('faço o envio do documento CNH na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  await sleep(3000);
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.uploadDocument();
+  await sleep(3000);
+});
+
+When('clico no botão Enviar na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
+  const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
+  await accountOpeningActions.clickBtnSend();
+});
+
