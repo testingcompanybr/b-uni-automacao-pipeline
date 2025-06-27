@@ -1,5 +1,5 @@
 # language: pt
-@mobile @mobilePersonalAccountCreation
+@mobile @mobileContaPessoaFisica
 Funcionalidade: Criação Conta Pessoa Física no Aplicativo
   
   Cenário: Conta PF - Criação De Conta PF no Aplicativo
@@ -8,7 +8,6 @@ Funcionalidade: Criação Conta Pessoa Física no Aplicativo
     E clico no botão Criar Conta na tela Inicial do App
     Quando seleciono o tipo de conta Pessoa Física na tela de Tipo de Conta do App
     E clico no botão Continuar na tela de Tipo de Conta do App
-    E clico no botão Continuar na tela de Cadastrar do App
     E clico no botão Continuar na tela de Cadastrar do App
     E preencho o campo CPF com o valor aleatório na tela de Cadastrar do App
     E clico no botão Continuar na tela de Cadastrar do App

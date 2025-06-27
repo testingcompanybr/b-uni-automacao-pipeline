@@ -4,6 +4,9 @@ import { AndroidDialogActions } from '../../Pages/Mobile/AndroidDialogPageObject
 import type { Browser } from 'webdriverio';
 
 Given('clico em Permitir no dialogo de notificações do Android', async function (this: World) {
+  const mobileDriver = this.driver as Browser;
+  await mobileDriver.pause(2500);
+
   const androidDialogActions = new AndroidDialogActions(this.driver as Browser);
   await androidDialogActions.clickAllowNotificationButton();
 });

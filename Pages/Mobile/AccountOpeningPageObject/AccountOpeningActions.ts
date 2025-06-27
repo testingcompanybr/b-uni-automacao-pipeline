@@ -1,11 +1,12 @@
 import { Browser } from 'webdriverio';
 import { AccountOpeningElementsMap } from './AccountOpeningElementsMap';
 import { bySelector } from '../../../Support/MobileUtils';
-import { CPFGenerator } from '../../../Support/Utils';
+import { CPFGenerator, CNPJGenerator } from '../../../Support/Utils';
 
 export class AccountOpeningActions {
   constructor(private driver: Browser) {}
 
+  //PESSOA FISICA----------------------------------------------------------------------------------
   async fillCPF(cpf: string) {
     const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCPF));
     await input.click();
@@ -120,6 +121,94 @@ export class AccountOpeningActions {
   async clickStartIdentificationButton() {
     const btn = await this.driver.$(bySelector(AccountOpeningElementsMap.btnStartIdentification));
     await btn.click();
+  }
+
+  //PESSOA JURIDICA--------------------------------------------------------------------------------
+  async fillCNPJ(cnpj: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCNPJ));
+    await input.click();
+    await input.addValue(cnpj);
+  }
+
+  async fillCNPJRandom() {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCNPJ));
+    await input.click();
+    await input.addValue(CNPJGenerator());
+  }
+
+  async fillCorporateReason(corporateReason: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCorporateReason));
+    await input.click();
+    await input.addValue(corporateReason);
+  }
+
+  async fillFantasyName(fantasyName: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputFantasyName));
+    await input.click();
+    await input.addValue(fantasyName);
+  }
+
+  async fillStateRegistration(stateRegistration: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputStateRegistration));
+    await input.click();
+    await input.addValue(stateRegistration);
+  }
+
+  async fillCorporationOpenDate(corporationOpenDate: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCorporationOpeningDate));
+    await input.click();
+    await input.addValue(corporationOpenDate);
+  }
+
+  async fillCorporationType(corporationType: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCorporationType));
+    await input.click();
+    const option = await this.driver.$(bySelector(AccountOpeningElementsMap.optionCorporationTypeByType(corporationType)));
+    await option.click();
+  }
+
+  async fillCNAE(cnae: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCNAE));
+    await input.click();
+    await input.addValue(cnae);
+  }
+
+  async fillCorporationCategory(corporationCategory: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputCorporationCategory));
+    await input.click();
+    const option = await this.driver.$(bySelector(AccountOpeningElementsMap.optionCorporationCategoryByCategory(corporationCategory)));
+    await option.click();
+  }
+
+  async fillCorporationIncome(income: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputIncome));
+    await input.click();
+    await input.addValue(income);
+  }
+
+  async fillRepresentativeType(representativeType: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputRepresentative));
+    await input.click();
+    const option = await this.driver.$(bySelector(AccountOpeningElementsMap.optionRepresentativeByRepresentative(representativeType)));
+    await option.click();
+  }
+
+   async fillRepresentativeCEP(cep: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputRepresentativeCEP));
+    await input.click();
+    await input.addValue(cep);
+  }
+
+  async fillRepresentativeNumber(number: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputRepresentativeNumber));
+    await input.click();
+    await input.addValue(number);
+  }
+
+  async fillRepresentativeComplement(complement: string) {
+    const input = await this.driver.$(bySelector(AccountOpeningElementsMap.inputRepresentativeComplement));
+    await input.click();
+    await input.addValue(complement);
   }
 
 }
