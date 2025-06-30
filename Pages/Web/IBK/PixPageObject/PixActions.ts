@@ -17,4 +17,14 @@ async clickBtnCreateKey(): Promise<void> {
     await btnCreateKey.click();
 }
 
+async clickBtnCharge(): Promise<void> {
+    const btnCharge: WebElement = await this.waitForElement(PixElementsMap.btnCharge);
+    await btnCharge.click();
+}
+
+async clickBtnCopyPaste(): Promise<void> {
+    const btnCopyPaste: WebElement = await this.waitForElement(PixElementsMap.btnCopyPaste);
+    await btnCopyPaste.click();
+}
+
 }

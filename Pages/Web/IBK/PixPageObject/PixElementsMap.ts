@@ -2,5 +2,7 @@ import { By } from 'selenium-webdriver';
 
 export const PixElementsMap = {
   btnTransfer: By.xpath("//p[contains(@class, 'icon-card__text') and text()='Transferir']"),
-  btnCreateKey: By.xpath("//p[contains(@class, 'icon-card__text') and text()='Criar chave']")
+  btnCreateKey: By.xpath("//p[contains(@class, 'icon-card__text') and text()='Criar chave']"),
+  btnCharge: By.xpath("//p[contains(@class, 'icon-card__text') and text()='Cobrar']"),
+  btnCopyPaste: By.xpath("//p[contains(@class, 'icon-card__text') and text()='Copia e cola']")
 };

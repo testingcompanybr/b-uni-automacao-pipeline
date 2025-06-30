@@ -64,3 +64,27 @@ Funcionalidade: Pix
     # E clico no botão de 3 pontos da chave aleatória na tela de Pix
     # E clico no botão Apagar chave Pix
     # E a chave aleatória deve ter sido excluida
+
+  Cenário: Tranferência Pix Copia e Cola
+    Dado estou na página Home do Internet Banking
+    Quando clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão Cobrar na tela de Pix
+    E preencho o campo valor com "1" na tela Receber na etapa de Valor
+    E preencho o campo Descrição com o valor "Teste cobranca pix" na tela Receber na etapa de Descrição
+    E clico no botão Gerar QRcode na tela Receber na etapa de Descrição
+    E clico no botão Copiar na tela Receber na etapa de QRcode Pix
+    E clico no botão de Início no menu lateral na tela Receber na etapa de QRcode Pix
+    E clico no perfil do usuário logado na tela de Home
+    E clico no botão Sair no menu dropdown do perfil do usuário na tela de Home
+    E preencho o campo CPF com o valor "agua"
+    E preencho o campo Senha com o valor "Pass123123*"
+    E clico no botão Entrar
+    E preencho o campo Código com o valor "576439"
+    E clico no botão Entrar da tela de Solicitar SMS
+    E clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão Copia e cola na tela de Pix
+    E colo o código pix copiado anteriormente na tela de Pix Copia e Cola na etapa de Pagar
+    E clico no botão Continuar na tela de Pix Copia e Cola na etapa de Pagar
+    E clico no botão Confirmar na tela de Pix Copia e Cola na etapa de Detalhes
+    E digito o PIN "112233" no pop-up Digite o seu PIN na tela de Pix Copia e Cola na etapa de Detalhes
+    E clico no botão Confirmar no pop-up Digite o seu PIN na tela de Pix Copia e Cola na etapa de Detalhes
