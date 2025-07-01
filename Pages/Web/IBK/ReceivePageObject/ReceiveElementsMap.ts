@@ -3,7 +3,7 @@ import { By } from 'selenium-webdriver';
 export const ReceiveElementsMap = {
   btnHome: By.css("[testid='home_HOME_click']"),
   //Valor---------------------------------------------------------------------------------------------------------------------
-  inputPixValue: By.css("input.value-requested__currency-mask-input"),
+  inputPixValue: By.css("input.generate-billet-amount__currency-mask-input"),
   btnContinue: By.xpath("//button[.//span[contains(text(), 'Continuar')]]"),
   //Descrição-----------------------------------------------------------------------------------------------------------------
   textAreaDescription: By.xpath("//textarea[contains(@class, 'ant-input')]"),

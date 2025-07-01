@@ -27,4 +27,23 @@ async clickBtnCopyPaste(): Promise<void> {
     await btnCopyPaste.click();
 }
 
+async clickBtnPixKeyOptions(pixKeyLabel: string): Promise<void> {
+    const containers: WebElement[] = await this.driver.findElements(PixElementsMap.containerPixKeys);
+
+    for (const container of containers) {
+        const labelElement = await container.findElement(PixElementsMap.labelPixKeys);
+        const labelText = await labelElement.getText();
+
+        if (labelText === pixKeyLabel) {
+            const btnMenu: WebElement = await container.findElement(PixElementsMap.btnPixKeyOptions);
+            await btnMenu.click();
+        }
+    }
+}
+
+async clickBtnDeleteKeyPix(): Promise<void> {
+    const btnDeletePixKey: WebElement = await this.waitForElement(PixElementsMap.btnDeletePixKey);
+    await btnDeletePixKey.click();
+}
+
 }
