@@ -14,4 +14,9 @@ export class HomeActions {
     const btn = await this.driver.$(bySelector(HomeElementsMap.btnExtract));
     await btn.click();
   }
+
+  async clickBtnProfile() {
+    const btn = await this.driver.$(bySelector(HomeElementsMap.imgProfile));
+    await btn.click();
+  }
 }

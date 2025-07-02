@@ -3,7 +3,7 @@ import { World } from '../../Support/World';
 import { PixActions } from '../../Pages/Mobile/PixPageObject/PixActions';
 import { PixElementsMap } from '../../Pages/Mobile/PixPageObject/PixElementsMap';
 import type { Browser } from 'webdriverio';
-import { bySelector } from '../../Support/MobileUtils';
+import { bySelector, pressAndroidBackButton } from '../../Support/MobileUtils';
 import { expect } from 'chai';
 
 When('clico no botão Transferir na tela de Pix do App', async function (this: World) {
@@ -62,4 +62,13 @@ Then('deve haver uma chave {string} cadastrada na tela de Pix do App', async fun
   const element = await driver.$(bySelector(PixElementsMap.txtKeyTypeByKeyType(keyType)));
   const value = await element.getText();
   expect(value).to.equal(keyType);
+});
+
+When('clico no botão Cobrar na tela de Pix do App', async function (this: World) {
+  const pixActions = new PixActions(this.driver as Browser);
+  await pixActions.clickBtnCharge();
+});
+
+When('clico no botão Voltar na tela de Pix do App', async function (this: World) {
+  await pressAndroidBackButton(this.driver as Browser);
 });

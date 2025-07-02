@@ -27,3 +27,11 @@ Then('verifico que estou logado no Aplicativo', async function (this: World) {
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
 });
+
+When('clico na foto de perfil do usuário logado na tela Inicial do App', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as Browser);
+  await homeActions.clickBtnProfile();
+
+  const mobileDriver = this.driver as Browser;
+  await mobileDriver.pause(1500);
+});

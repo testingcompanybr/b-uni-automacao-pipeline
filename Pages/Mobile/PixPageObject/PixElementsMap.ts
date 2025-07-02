@@ -8,5 +8,7 @@ export const PixElementsMap = {
   keyboardPIN: (digit: string) => `android=new UiSelector().description("${digit}")`,
   btnShowTransactionProof: "accessibility id:VER COMPROVANTE",
   btnAddKey: 'android=new UiSelector().description("")',
-  txtKeyTypeByKeyType: (keyType: string) => `android=new UiSelector().text("${keyType}")`
+  txtKeyTypeByKeyType: (keyType: string) => `android=new UiSelector().text("${keyType}")`,
+  btnCharge: 'android=new UiSelector().description("Cobrar")',
+  btnCopyPaste: 'android=new UiSelector().description("Pix copia e cola")'
 };

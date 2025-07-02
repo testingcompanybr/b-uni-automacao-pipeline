@@ -21,3 +21,7 @@ export async function swipeUp(driver: Browser, duration = 800) {
     { action: 'release' }
   ]);
 }
+
+export async function pressAndroidBackButton(driver: Browser) {
+  await driver.back();
+}

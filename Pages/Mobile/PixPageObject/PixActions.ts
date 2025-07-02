@@ -55,4 +55,14 @@ export class PixActions {
     const btn = await this.driver.$(bySelector(PixElementsMap.btnShowTransactionProof));
     await btn.click();
   }
+
+  async clickBtnCharge() {
+    const btn = await this.driver.$(bySelector(PixElementsMap.btnCharge));
+    await btn.click();
+  }
+
+  async clickBtnCopyPaste() {
+    const btn = await this.driver.$(bySelector(PixElementsMap.btnCopyPaste));
+    await btn.click();
+  }
 }
