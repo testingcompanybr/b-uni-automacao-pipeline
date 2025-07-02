@@ -58,7 +58,7 @@ Funcionalidade: Pix aplicativo
     E clico no botão Chave aleatória na tela de Tipo de Chave do App
     E clico no botão Continuar na tela de Tipo de Chave do App
     E digito o PIN "112233" na tela de preenchimento do PIN do App
-    # Então deve haver uma chave aleatória cadastrada na tela de Pix do App
+    Então deve haver uma chave "Chave aleatória" cadastrada na tela de Pix do App
 
   Cenário: Criação de Chave Pix CPF/CNPJ no App
     Dado que estou na tela de Home do App
@@ -72,4 +72,4 @@ Funcionalidade: Pix aplicativo
     E clico no botão CPF CNPJ com o valor "176.980.300-91" na tela de Tipo de Chave do App
     E clico no botão Continuar na tela de Tipo de Chave do App
     E digito o PIN "112233" na tela de preenchimento do PIN do App
-    # Então deve haver uma CPF CNPJ cadastrada na tela de Pix do App
+    Então deve haver uma chave "CPF/CNPJ" cadastrada na tela de Pix do App
