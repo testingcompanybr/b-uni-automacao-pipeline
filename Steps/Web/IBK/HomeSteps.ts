@@ -52,3 +52,13 @@ When('clico no botão de Pix no menu lateral na tela de Home', async function (t
   const homeActions = new HomeActions(this.driver as WebDriver);
   await homeActions.clickBtnPix();
 });
+
+When('clico no botão de Receber na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnReceive();
+});
+
+When('clico no botão de Pagar na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnPay();
+});

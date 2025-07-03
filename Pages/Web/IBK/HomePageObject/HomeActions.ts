@@ -32,4 +32,14 @@ async clickBtnPix(): Promise<void> {
     await btnPix.click();
 }
 
+async clickBtnReceive(): Promise<void> {
+    const btnReceive: WebElement = await this.waitForElement(HomeElementsMap.btnReceive);
+    await btnReceive.click();
+}
+
+async clickBtnPay(): Promise<void> {
+    const btnPay: WebElement = await this.waitForElement(HomeElementsMap.btnPay);
+    await btnPay.click();
+}
+
 }
