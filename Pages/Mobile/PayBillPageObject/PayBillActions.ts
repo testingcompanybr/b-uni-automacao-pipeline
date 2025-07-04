@@ -16,4 +16,22 @@ export class PayBillActions {
     await input.addValue(billetCodeValue);
   }
 
+  async clickBtnConfirm() {
+    const btn = await this.driver.$(bySelector(PayBillElementsMap.btnConfirm));
+    await btn.click();
+  }
+
+  async fillPINCode(pinCode: string) {
+    for(const digit of pinCode) {
+        const btn = await this.driver.$(bySelector(PayBillElementsMap.keyboardPIN(digit)));
+        await btn.click();
+        await this.driver.pause(500);
+    }
+  }
+
+  async clickBtnShowTransactionProof() {
+    const btn = await this.driver.$(bySelector(PayBillElementsMap.btnShowTransactionProof));
+    await btn.click();
+  }
+
 }

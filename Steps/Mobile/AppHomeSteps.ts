@@ -44,4 +44,7 @@ When('clico no botão Pagar na tela de Home do App', async function (this: World
 When('clico no botão Pagar boleto na tela de Home do App', async function (this: World) {
   const homeActions = new HomeActions(this.driver as Browser);
   await homeActions.clickBtnPayWithBillet();
+
+  const mobileDriver = this.driver as Browser;
+  await mobileDriver.pause(2000);
 });

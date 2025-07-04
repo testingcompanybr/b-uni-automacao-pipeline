@@ -23,5 +23,9 @@ Funcionalidade: Boleto aplicativo
     E clico no botão OK no dialogo de Permissão de câmera do App
     E clico no botão Permitir enquanto estiver usando o App no dialogo de câmera do Android
     E clico no botão Inserir Código Manualmente na câmera do dispositivo
-    E preencho o campo Código do boleto com "" na tela de Pagar conta do App
+    E preencho o campo Código do boleto com "23793381286008301352856000063307789840000150000" na tela de Pagar conta do App
     E clico no botão Continuar na tela de Pagar conta do App
+    E clico no botão Confirmar na tela de Pagar conta do App
+    E clico no botão Confirmar na tela de Pagar conta do App
+    E digito o PIN "112233" na tela de Pagar conta do App
+    E clico no botão Ver Comprovante na tela de Pagar conta do App
