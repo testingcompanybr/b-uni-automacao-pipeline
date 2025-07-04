@@ -1,4 +1,4 @@
-import { Given } from '@cucumber/cucumber';
+import { Given, When } from '@cucumber/cucumber';
 import { World } from '../../Support/World';
 import { AndroidDialogActions } from '../../Pages/Mobile/AndroidDialogPageObject/AndroidDialogActions';
 import type { Browser } from 'webdriverio';
@@ -11,7 +11,7 @@ Given('clico em Permitir no dialogo de notificações do Android', async functio
   await androidDialogActions.clickAllowNotificationButton();
 });
 
-Given('clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android', async function (this: World) {
+When('clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android', async function (this: World) {
   const androidDialogActions = new AndroidDialogActions(this.driver as Browser);
   await androidDialogActions.clickAllowWhileUsingAppButton();
 });

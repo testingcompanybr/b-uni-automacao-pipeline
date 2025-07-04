@@ -22,4 +22,24 @@ async fillBarCodeField(barCode: string): Promise<void> {
     await inputBarCode.sendKeys(barCode);
 }
 
+async digitPinNumericKeyboard(pin: string): Promise<void> {
+    for (const digit of pin) {
+         const locator = PayElementsMap.numericKeyboard(digit);
+         const element = await this.driver.wait(until.elementLocated(locator), 5000);
+         await this.driver.wait(until.elementIsVisible(element), 5000);
+         await this.driver.wait(until.elementIsEnabled(element), 5000);
+
+    try {
+          await element.click();
+        } catch (error) {
+          await this.driver.executeScript('arguments[0].click();', element);
+      }
+    }
+  }
+
+async clickBtnConfirmPopUp(): Promise<void> {
+    const btnConfirmPopUp: WebElement = await this.waitForElement(PayElementsMap.btnConfirmPopUp);
+    await btnConfirmPopUp.click();
+}
+
 }

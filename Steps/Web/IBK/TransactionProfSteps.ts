@@ -104,3 +104,10 @@ Then('a mensagem {string} deve ser apresentada na tela de Comprovante', async fu
   const textMessage = await element.getText();
   expect(textMessage).to.equal(message);
 });
+
+Then('a tela Comprovante da transação deve ser apresentada', async function (this: World) {
+  await sleep(3000);
+  const actual_driver = await this.driver as WebDriver;
+  const url = await actual_driver.getCurrentUrl();
+  expect(url).to.include('https://ibk.stg.ser.buni.digital/inicio/detalhes/');
+});

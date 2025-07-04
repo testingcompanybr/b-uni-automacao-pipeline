@@ -19,4 +19,14 @@ export class HomeActions {
     const btn = await this.driver.$(bySelector(HomeElementsMap.imgProfile));
     await btn.click();
   }
+
+  async clickBtnPay() {
+    const btn = await this.driver.$(bySelector(HomeElementsMap.btnPay));
+    await btn.click();
+  }
+
+  async clickBtnPayWithBillet() {
+    const btn = await this.driver.$(bySelector(HomeElementsMap.btnPayWithBillet));
+    await btn.click();
+  }
 }

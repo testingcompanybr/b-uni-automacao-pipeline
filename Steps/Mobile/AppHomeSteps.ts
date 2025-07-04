@@ -35,3 +35,13 @@ When('clico na foto de perfil do usuário logado na tela Inicial do App', async 
   const mobileDriver = this.driver as Browser;
   await mobileDriver.pause(1500);
 });
+
+When('clico no botão Pagar na tela de Home do App', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as Browser);
+  await homeActions.clickBtnPay();
+});
+
+When('clico no botão Pagar boleto na tela de Home do App', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as Browser);
+  await homeActions.clickBtnPayWithBillet();
+});
