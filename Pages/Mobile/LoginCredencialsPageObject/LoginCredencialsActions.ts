@@ -8,6 +8,7 @@ export class LoginCredencialsActions {
   async fillCPF(cpf: string) {
     const input = await this.driver.$(bySelector(LoginCredencialsElementsMap.inputCPF));
     await input.click();
+    await input.clearValue();
     await input.addValue(cpf);
   }
 

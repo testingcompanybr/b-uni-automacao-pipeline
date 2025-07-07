@@ -72,3 +72,8 @@ When('clico no botão Cobrar na tela de Pix do App', async function (this: World
 When('clico no botão Voltar na tela de Pix do App', async function (this: World) {
   await pressAndroidBackButton(this.driver as Browser);
 });
+
+When('clico no botão Pix copia e cola na tela de Pix do App', async function (this: World) {
+  const pixActions = new PixActions(this.driver as Browser);
+  await pixActions.clickBtnCopyPaste();
+});

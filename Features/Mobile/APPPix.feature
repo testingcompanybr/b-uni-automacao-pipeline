@@ -85,11 +85,28 @@ Funcionalidade: Pix aplicativo
     E clico no botão Cobrar na tela de Pix do App
     E preencho o campo valor com "1" na tela de Cobrar do App
     E clico no botão Continuar na tela de Cobrar do App
-    E preencho o campo Identificador com "Teste pix copia e cola" na tela de Cobrar do App
     E clico no botão Criar QRcode na tela de Cobrar do App
     E clico no botão Copiar na tela de Cobrar do App
+    E clico no botão Voltar na tela de Cobrar do App
     E clico no botão Voltar na tela de Cobrar do App
     E clico no botão Voltar na tela de Cobrar do App
     E clico no botão Voltar na tela de Pix do App
     E clico na foto de perfil do usuário logado na tela Inicial do App
     E clico no botão Sair na tela de Perfil do App
+    E clico no botão Entrar na tela Inicial do App
+    E preencho o campo CPF com o valor "agua" na tela de Login do App
+    E clico no botão Continuar na tela de Login do App
+    E preencho o campo Senha com o valor "Pass123123*" na tela de Login do App
+    E clico no botão Entrar na tela de Login do App
+    E clico no botão Agora não no dialogo do FaceID na tela de Login do App
+    E preencho o campo Código com o valor "576439" na tela de Autorização do App
+    E clico no botão Entrar na tela de Login do App na tela de Autorização do App
+    E clico no botão Pix na tela de Home do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão Próximo na tela de instruções do Pix do App
+    E clico no botão Pix copia e cola na tela de Pix do App
+    E clico no botão Colar na tela de Copia e cola do App
+    E clico no botão Continuar na tela de Copia e cola do App
+    E clico no botão Confirmar na tela de Confirmação de Pix do App
+    E digito o PIN "124578" na tela de preenchimento do PIN do App

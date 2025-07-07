@@ -87,5 +87,5 @@ Funcionalidade: Pix
     E colo o código pix copiado anteriormente na tela de Pix Copia e Cola na etapa de Pagar
     E clico no botão Continuar na tela de Pix Copia e Cola na etapa de Pagar
     E clico no botão Confirmar na tela de Pix Copia e Cola na etapa de Detalhes
-    E digito o PIN "112233" no pop-up Digite o seu PIN na tela de Pix Copia e Cola na etapa de Detalhes
+    E digito o PIN "124578" no pop-up Digite o seu PIN na tela de Pix Copia e Cola na etapa de Detalhes
     E clico no botão Confirmar no pop-up Digite o seu PIN na tela de Pix Copia e Cola na etapa de Detalhes
