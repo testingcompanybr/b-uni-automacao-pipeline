@@ -48,3 +48,11 @@ When('clico no botão Pagar boleto na tela de Home do App', async function (this
   const mobileDriver = this.driver as Browser;
   await mobileDriver.pause(2000);
 });
+
+Then('a mensagem Transferência enviada deve ser exibida na tela de Home do App', async function (this: World) {
+  const driver = this.driver as Browser;
+  const element = await driver.$(bySelector(HomeElementsMap.txtTransactionSent));
+
+  const isDisplayed = await element.isDisplayed();
+  expect(isDisplayed).to.be.true;
+});

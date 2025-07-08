@@ -77,3 +77,23 @@ When('clico no botão Pix copia e cola na tela de Pix do App', async function (t
   const pixActions = new PixActions(this.driver as Browser);
   await pixActions.clickBtnCopyPaste();
 });
+
+Then('clico no botão de 3 pontos da chave pix na tela de Pix do App', async function (this: World) {
+  const pixActions = new PixActions(this.driver as Browser);
+  await pixActions.clickBtnPixKeyOptions();
+});
+
+Then('clico no botão Apagar chave Pix na tela de Pix do App', async function (this: World) {
+  const pixActions = new PixActions(this.driver as Browser);
+  await pixActions.clickBtnDeletePixKey();
+
+  const mobileDriver = this.driver as Browser;
+  await mobileDriver.pause(5000);
+});
+
+Then('a chave {string} deve ter sido excluida na tela de Pix do App', async function (this: World, keyType: string) {
+  const driver = this.driver as Browser;
+  const element = await driver.$(bySelector(PixElementsMap.txtKeyTypeByKeyType(keyType)));
+  const isExisting = await element.isExisting();
+  expect(isExisting).to.be.false;
+});

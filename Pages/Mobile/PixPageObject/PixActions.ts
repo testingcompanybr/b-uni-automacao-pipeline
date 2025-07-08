@@ -65,4 +65,14 @@ export class PixActions {
     const btn = await this.driver.$(bySelector(PixElementsMap.btnCopyPaste));
     await btn.click();
   }
+
+  async clickBtnPixKeyOptions() {
+    const btn = await this.driver.$(bySelector(PixElementsMap.btnPixKeyOptions));
+    await btn.click();
+  }
+
+  async clickBtnDeletePixKey() {
+    const btn = await this.driver.$(bySelector(PixElementsMap.btnDeletePixKey));
+    await btn.click();
+  }
 }

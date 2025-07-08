@@ -10,5 +10,7 @@ export const PixElementsMap = {
   btnAddKey: 'android=new UiSelector().description("")',
   txtKeyTypeByKeyType: (keyType: string) => `android=new UiSelector().text("${keyType}")`,
   btnCharge: 'android=new UiSelector().description("Cobrar")',
-  btnCopyPaste: 'android=new UiSelector().description("Pix copia e cola")'
+  btnCopyPaste: 'android=new UiSelector().description("Pix copia e cola")',
+  btnPixKeyOptions: 'accessibility id:',
+  btnDeletePixKey: 'accessibility id:, Apagar chave Pix, Delete a chave e abre espaço para a criação de outra em seu lugar',
 };
