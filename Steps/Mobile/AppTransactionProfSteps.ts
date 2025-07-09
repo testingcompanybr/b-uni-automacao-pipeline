@@ -102,3 +102,11 @@ Then('a Descrição deve ser {string} na tela de Comprovante do App', async func
   const value = await element.getText();
   expect(value).to.equal(description);
 });
+
+Then('a tela de Comprovante do App deve ser exibida', async function (this: World) {
+  const driver = this.driver as Browser;
+  const element = await driver.$(bySelector(TransactionProfElementsMap.labelProfScreen));
+
+  const isDisplayed = await element.isDisplayed();
+  expect(isDisplayed).to.be.true;
+});

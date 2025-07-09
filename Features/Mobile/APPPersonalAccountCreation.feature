@@ -2,7 +2,7 @@
 @mobile @mobileContaPessoaFisica
 Funcionalidade: Criação Conta Pessoa Física no Aplicativo
   
-  Cenário: Conta PF - Criação De Conta PF no Aplicativo
+  Cenário: Conta PF - Criação De Conta PF no App
     Dado que estou na página Inicial do App
     E clico em Permitir no dialogo de notificações do Android
     E clico no botão Criar Conta na tela Inicial do App

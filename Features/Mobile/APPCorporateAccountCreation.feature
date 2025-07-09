@@ -2,7 +2,7 @@
 @mobile @mobileContaPessoaJuridica
 Funcionalidade: Criação Conta Pessoa Juridica no Aplicativo
   
-  Cenário: Conta PJ - Criação De Conta PJ no Aplicativo
+  Cenário: Conta PJ - Criação De Conta PJ no App
     Dado que estou na página Inicial do App
     E clico em Permitir no dialogo de notificações do Android
     E clico no botão Criar Conta na tela Inicial do App

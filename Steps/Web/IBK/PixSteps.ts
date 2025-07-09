@@ -42,6 +42,7 @@ Then('clico no botão de 3 pontos da chave {string} na tela de Pix', async funct
 Then('clico no botão Apagar chave Pix na tela de Pix', async function (this: World) {
   const pixActions = new PixActions(this.driver as WebDriver);
   await pixActions.clickBtnDeleteKeyPix();
+  await sleep(4000);
 });
 
 Then('a chave {string} deve ter sido excluida na tela de Pix', async function (this: World, keyLabel: string) {

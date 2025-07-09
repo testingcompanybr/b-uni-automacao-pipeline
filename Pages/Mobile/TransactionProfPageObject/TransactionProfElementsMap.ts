@@ -13,5 +13,6 @@ export const TransactionProfElementsMap = {
   txtAgencyDestiny: 'android=new UiSelector().className("android.widget.TextView").index(32)',
   txtAccountDestiny: 'android=new UiSelector().className("android.widget.TextView").index(34)',
   txtDescription: 'android=new UiSelector().className("android.widget.TextView").index(37)',
-  btnClose: "accessibility id:FECHAR"
+  btnClose: "accessibility id:FECHAR",
+  labelProfScreen: 'android=new UiSelector().text("Comprovante")'
 }
