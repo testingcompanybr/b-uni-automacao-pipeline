@@ -34,4 +34,11 @@ export class PayBillActions {
     await btn.click();
   }
 
+  async fillBilletValue(billetValue: string) {
+    const input = await this.driver.$(bySelector(PayBillElementsMap.inputValue));
+    await input.click();
+    await input.clearValue();
+    await input.addValue(billetValue);
+  }
+
 }

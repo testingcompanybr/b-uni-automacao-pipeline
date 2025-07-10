@@ -55,3 +55,46 @@ Then('o campo de Multa deve ser exibido na tela de Pagar conta do App', async fu
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
 });
+
+Then('o campo Data de Vencimento deve ter a data anterior ao dia atual na tela de Pagar conta do App', async function (this: World) {
+  const driver = this.driver as Browser;
+  const element = await driver.$(bySelector(PayBillElementsMap.txtDate));
+  const dateText = await element.getText();
+  const [day, month, year] = dateText.split('/');
+  const dueDate = new Date(Number(year), Number(month) - 1, Number(day));
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  expect(dueDate.getTime()).to.be.lessThan(today.getTime());
+});
+
+Then('o campo de Juros deve ser exibido na tela de Pagar conta do App', async function (this: World) {
+  const driver = this.driver as Browser;
+  const element = await driver.$(bySelector(PayBillElementsMap.labelFess));
+
+  const isDisplayed = await element.isDisplayed();
+  expect(isDisplayed).to.be.true;
+});
+
+Then('o campo Valor mínimo deve ser exibido na tela de Pagar conta do App', async function (this: World) {
+  const driver = this.driver as Browser;
+  const element = await driver.$(bySelector(PayBillElementsMap.labelMinValue));
+
+  const isDisplayed = await element.isDisplayed();
+  expect(isDisplayed).to.be.true;
+});
+
+Then('preencho o campo Valor do boleto com o valor {string} na tela de Pagar conta do App', async function (this: World, billetValue: string) {
+  const payBillActions = new PayBillActions(this.driver as Browser);
+  await payBillActions.fillBilletValue(billetValue);
+
+  const mobileDriver = this.driver as Browser;
+  await mobileDriver.pause(2500);
+});
+
+Then('o campo Valor mínimo não deve ser mais exibido na tela de Pagar conta do App', async function (this: World) {
+  const driver = this.driver as Browser;
+  const element = await driver.$(bySelector(PayBillElementsMap.labelMinValue));
+
+  const isDisplayed = await element.isDisplayed();
+  expect(isDisplayed).to.be.false;
+});
