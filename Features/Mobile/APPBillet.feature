@@ -105,7 +105,28 @@ Funcionalidade: Boleto aplicativo
 #     E clico no botão Ver Comprovante na tela de Pagar conta do App
 #     E a tela de Comprovante do App deve ser exibida
 
-  Cenário: Pagar boleto com valor máximo e mínimo App
+#   Cenário: Pagar boleto com valor máximo e mínimo App
+#     Dado que estou na tela de Home do App
+#     Quando clico em Próximo no dialogo de Acesso de localização do App
+#     E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
+#     E clico no botão Pagar na tela de Home do App
+#     E clico no botão Pagar boleto na tela de Home do App
+#     E clico no botão OK no dialogo de Permissão de câmera do App
+#     E clico no botão Permitir enquanto estiver usando o App no dialogo de câmera do Android
+#     E clico no botão Inserir Código Manualmente na câmera do dispositivo
+#     E preencho o campo Código do boleto com "34191570070404695481642042200008290440000032202" na tela de Pagar conta do App
+#     E clico no botão Continuar na tela de Pagar conta do App
+#     Então o campo Valor mínimo deve ser exibido na tela de Pagar conta do App
+#     E preencho o campo Valor do boleto com o valor "50000" na tela de Pagar conta do App
+#     E o campo Valor mínimo não deve ser mais exibido na tela de Pagar conta do App
+#     E clico no botão Confirmar na tela de Pagar conta do App
+#     E clico no botão Confirmar na tela de Pagar conta do App
+#     E clico no botão Confirmar na tela de Pagar conta do App
+#     E digito o PIN "112233" na tela de Pagar conta do App
+#     E clico no botão Ver Comprovante na tela de Pagar conta do App
+#     E a tela de Comprovante do App deve ser exibida
+
+  Cenário: Pagar boleto com valor máximo e mínimo com juros App
     Dado que estou na tela de Home do App
     Quando clico em Próximo no dialogo de Acesso de localização do App
     E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
@@ -114,9 +135,10 @@ Funcionalidade: Boleto aplicativo
     E clico no botão OK no dialogo de Permissão de câmera do App
     E clico no botão Permitir enquanto estiver usando o App no dialogo de câmera do Android
     E clico no botão Inserir Código Manualmente na câmera do dispositivo
-    E preencho o campo Código do boleto com "34191570070404695481642042200008290440000032202" na tela de Pagar conta do App
+    E preencho o campo Código do boleto com "34191760070778639037250800740008190570000013900" na tela de Pagar conta do App
     E clico no botão Continuar na tela de Pagar conta do App
     Então o campo Valor mínimo deve ser exibido na tela de Pagar conta do App
+    E o campo de Multa deve ser exibido na tela de Pagar conta do App
     E preencho o campo Valor do boleto com o valor "50000" na tela de Pagar conta do App
     E o campo Valor mínimo não deve ser mais exibido na tela de Pagar conta do App
     E clico no botão Confirmar na tela de Pagar conta do App
@@ -125,23 +147,6 @@ Funcionalidade: Boleto aplicativo
     E digito o PIN "112233" na tela de Pagar conta do App
     E clico no botão Ver Comprovante na tela de Pagar conta do App
     E a tela de Comprovante do App deve ser exibida
-
-  # Cenário: Pagar boleto com valor máximo e mínimo com juros App
-  #   Dado que estou na tela de Home do App
-  #   Quando clico em Próximo no dialogo de Acesso de localização do App
-  #   E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
-  #   E clico no botão Pagar na tela de Home do App
-  #   E clico no botão Pagar boleto na tela de Home do App
-  #   E clico no botão OK no dialogo de Permissão de câmera do App
-  #   E clico no botão Permitir enquanto estiver usando o App no dialogo de câmera do Android
-  #   E clico no botão Inserir Código Manualmente na câmera do dispositivo
-  #   E preencho o campo Código do boleto com "34191760070778639037250800740008190570000013900" na tela de Pagar conta do App
-  #   E clico no botão Continuar na tela de Pagar conta do App
-      # E clico no botão Confirmar na tela de Pagar conta do App
-      # E clico no botão Confirmar na tela de Pagar conta do App
-      # E digito o PIN "112233" na tela de Pagar conta do App
-      # E clico no botão Ver Comprovante na tela de Pagar conta do App
-      # Então a tela de Comprovante do App deve ser exibida
 
   # Cenário: Pagar boleto com valor máximo e mínimo com desconto App
   #   Dado que estou na tela de Home do App
