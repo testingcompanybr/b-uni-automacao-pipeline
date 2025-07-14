@@ -1,5 +1,5 @@
 # language: pt
-@mobile @mobileBillet
+@mobile @mobileBoleto
 Funcionalidade: Boleto aplicativo
 
   Contexto: Logar no app

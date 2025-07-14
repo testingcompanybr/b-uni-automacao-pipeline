@@ -1,5 +1,5 @@
 # language: pt
-@web @ibkKeyPix
+@web @ibkChavePix
 Funcionalidade: Chave Pix
 
   Contexto: Logar no Internet Banking

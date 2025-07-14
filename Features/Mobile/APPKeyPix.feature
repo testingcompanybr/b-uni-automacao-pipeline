@@ -1,5 +1,5 @@
 # language: pt
-@mobile @mobileKeyPix
+@mobile @mobileChavePix
 Funcionalidade: Chave Pix aplicativo
 
   Contexto: Logar no app
