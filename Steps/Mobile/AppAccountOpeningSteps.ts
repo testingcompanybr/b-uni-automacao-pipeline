@@ -65,6 +65,9 @@ When('preencho o campo Senha de acesso com o valor {string} na tela de Cadastrar
 When('preencho o campo CEP com o valor {string} na tela de Cadastrar do App', async function (this: World, cep: string) {
   const accountOpeningActions = new AccountOpeningActions(this.driver as Browser);
   await accountOpeningActions.fillCEP(cep);
+
+  const mobileDriver = this.driver as Browser;
+  await mobileDriver.pause(5000);
 });
 
 When('preencho o campo Número com o valor {string} na tela de Cadastrar do App', async function (this: World, number: string) {

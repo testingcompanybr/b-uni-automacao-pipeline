@@ -45,3 +45,11 @@ Then('o campo de Descontos deve ser exibido na tela de Pagar na etapa de Detalhe
 
   expect(isVisible).to.be.true;
 });
+
+Then('o campo de Juros deve ser exibido na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.labelFess), 10000);
+  const isVisible = await element.isDisplayed();
+
+  expect(isVisible).to.be.true;
+});
