@@ -42,4 +42,10 @@ async clickBtnConfirmPopUp(): Promise<void> {
     await btnConfirmPopUp.click();
 }
 
+async fillInputValue(value: string): Promise<void> {
+    const inputValue: WebElement = await this.waitForElement(PayElementsMap.inputValue);
+    await inputValue.clear();
+    await inputValue.sendKeys(value);
+}
+
 }

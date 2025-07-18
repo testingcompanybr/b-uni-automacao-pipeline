@@ -9,6 +9,11 @@ export const PayElementsMap = {
   //Detalhes do pagamento------------------------------------------------------------------------------------------
   numericKeyboard: (number: string) => By.xpath(`//p[contains(@class, 'confirmation-modal__number-grid__digit') and text()='${number}']`),
   btnConfirmPopUp: By.xpath("//div[contains(@class, 'confirmation-modal__button-container')]//button[.//span[contains(@class, 'advanced-button__inner__text') and text()='Confirmar']]"),
+  inputValue: By.xpath("//input[contains(@class, 'payment-details__input') and contains(@class, 'payment-details__input--amount')]"),
   labelDiscount: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Desconto']"),
   labelFess: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Juros']"),
+  labelFine: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Multa']"),
+  labelMinValue: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Valor mínimo']"),
+  labelMaxValue: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Valor máximo']"),
+  txtDate: By.xpath("//p[contains(@class, 'payment-details__text') and contains(text(), '/')]")
 };

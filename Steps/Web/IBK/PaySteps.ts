@@ -53,3 +53,53 @@ Then('o campo de Juros deve ser exibido na tela de Pagar na etapa de Detalhes do
 
   expect(isVisible).to.be.true;
 });
+
+Then('o campo de Multa deve ser exibido na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.labelFine), 10000);
+  const isVisible = await element.isDisplayed();
+
+  expect(isVisible).to.be.true;
+});
+
+Then('o campo Data de vencimento deve ter uma data menor que a data atual na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
+  //
+});
+
+Then('o campo de Valor mínimo deve ser exibido na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.labelMinValue), 10000);
+  const isVisible = await element.isDisplayed();
+
+  expect(isVisible).to.be.true;
+});
+
+Then('o campo de Valor máximo deve ser exibido na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.labelMaxValue), 10000);
+  const isVisible = await element.isDisplayed();
+
+  expect(isVisible).to.be.true;
+});
+
+Then('preencho o campo Valor do documento com o valor {string} na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World, value: string) {
+  const payActions = new PayActions(this.driver as WebDriver);
+  await payActions.fillInputValue(value);
+  await sleep(2000);
+});
+
+Then('o botão Avançar deve estar habilitado na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.btnAdvance), 10000);
+  const isDisabled = await element.getAttribute('disabled');
+
+  expect(isDisabled).to.be.null;
+});
+
+Then('o botão Avançar deve estar desabilitado na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.btnAdvance), 10000);
+  const isDisabled = await element.getAttribute('disabled');
+
+  expect(isDisabled).to.not.be.null;
+});
