@@ -7,6 +7,7 @@ module.exports = {
     formatOptions: {
       resultsDir: 'allure-results'
     },
-    language: 'pt'
+    language: 'pt',
+    retry: 2
   }
 };
