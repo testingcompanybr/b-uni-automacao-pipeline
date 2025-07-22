@@ -1,6 +1,6 @@
 import { Browser } from 'webdriverio';
 import { PixElementsMap } from './PixElementsMap';
-import { bySelector } from '../../../Support/MobileUtils';
+import { bySelector, swipeUp } from '../../../Support/MobileUtils';
 
 export class PixActions {
   constructor(private driver: Browser) {}
@@ -39,6 +39,8 @@ export class PixActions {
   }
 
   async clickBtnConfirm() {
+    await swipeUp(this.driver);
+
     const btn = await this.driver.$(bySelector(PixElementsMap.btnConfirm));
     await btn.click();
   }

@@ -48,7 +48,7 @@ export const AccountOpeningElementsMap = {
   fieldPublicPlace: By.xpath("//div[label[text()='Logradouro']]//input"),
   fieldNumberAdress: By.xpath("//div[label[text()='Número']]//input"),
   fieldComplement: By.xpath("//div[label[text()='Complemento']]//input"),
-  btnContinueFinalAdress: By.css("[testid='advance-address-submit']"),
+  btnContinueFinalAdress: By.css("[data-testid='advance-address-submit']"),
   msgErrorAdress: By.xpath("//div[contains(@class, 'ant-message-error')]//span[text()='Endereço não encontrado']"),
   //Identidade---------------------------------------------------------------------------------------------
   btnVerify: By.css(".ctaWrapper button"),

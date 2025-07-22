@@ -228,7 +228,7 @@ When('clico no botão Enviar na tela de Abertura de Conta na etapa de Identidade
 Then('o botão Continuar deve estar desabilitado na etapa de Validação', async function (this: World) {
   await sleep(1000);
   const actual_driver = await this.driver as WebDriver;
-  const button = await actual_driver.findElement(By.css('button[testid="advance-approval-device-submit"]'));
+  const button = await actual_driver.findElement(By.css('button[data-testid="advance-approval-device-submit"]'));
   const pointerEvents = await actual_driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");', button);
   expect(pointerEvents).to.equal('none');
 });
@@ -236,7 +236,7 @@ Then('o botão Continuar deve estar desabilitado na etapa de Validação', async
 Then('o botão Continuar deve estar desabilitado na etapa de Credenciais', async function (this: World) {
   await sleep(1000);
   const actual_driver = await this.driver as WebDriver;
-  const button = await actual_driver.findElement(By.css('button[testid="advance-credentials-submit"]'));
+  const button = await actual_driver.findElement(By.css('button[data-testid="advance-credentials-submit"]'));
   const pointerEvents = await actual_driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");', button);
   expect(pointerEvents).to.equal('none');
 });
@@ -244,7 +244,7 @@ Then('o botão Continuar deve estar desabilitado na etapa de Credenciais', async
 Then('o botão Continuar deve estar desabilitado na etapa de Endereço', async function (this: World) {
   await sleep(1000);
   const actual_driver = await this.driver as WebDriver;
-  const button = await actual_driver.findElement(By.css('button[testid="advance-address-submit"]'));
+  const button = await actual_driver.findElement(By.css('button[data-testid="advance-address-submit"]'));
   const pointerEvents = await actual_driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");', button);
   expect(pointerEvents).to.equal('none');
 });

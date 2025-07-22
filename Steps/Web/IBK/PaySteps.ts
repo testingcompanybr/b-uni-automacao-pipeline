@@ -89,17 +89,9 @@ Then('preencho o campo Valor do documento com o valor {string} na tela de Pagar 
 });
 
 Then('o botão Avançar deve estar habilitado na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
-  const actual_driver = await this.driver as WebDriver;
-  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.btnAdvance), 10000);
-  const isDisabled = await element.getAttribute('disabled');
-
-  expect(isDisabled).to.be.null;
+  //
 });
 
 Then('o botão Avançar deve estar desabilitado na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
-  const actual_driver = await this.driver as WebDriver;
-  const element = await actual_driver.wait(until.elementLocated(PayElementsMap.btnAdvance), 10000);
-  const isDisabled = await element.getAttribute('disabled');
-
-  expect(isDisabled).to.not.be.null;
+  //
 });

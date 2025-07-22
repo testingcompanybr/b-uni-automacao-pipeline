@@ -87,7 +87,6 @@ async fillPasswordAcessForm(passwordAcess: string): Promise<void> {
 async fillCEPForm(cep: string): Promise<void> {
     const cepInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldCEP);
     await cepInput.sendKeys(cep);
-    await sleep(5000);
 }
 
 async fillNeightborhood(neightborhood: string): Promise<void> {
@@ -101,6 +100,8 @@ async fillPublicPlace(publicplace: string): Promise<void> {
 }
 
 async fillNumberAdressForm(numberAdress: string): Promise<void> {
+    await sleep(7000);
+    
     const numberAdressInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldNumberAdress);
     await numberAdressInput.sendKeys(numberAdress);
 }
