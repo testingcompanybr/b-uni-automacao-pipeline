@@ -15,5 +15,5 @@ export const TransactionProfElementsMap = {
   btnShare: By.xpath('//button[.//span[contains(text(), "Compartilhar")]]'),
   btnDownload: By.xpath("//button[.//span[contains(text(), 'Baixar')]]"),
   btnSendByEmail: By.xpath("//button[.//span[contains(text(), 'Enviar por email')]]"),
-  txtEmailSent: By.xpath('/html/body/div[3]/div/div/div/div/div/span[2]')
+  txtEmailSent: By.xpath('/html/body/div[2]/div/div/div/div/div/span[2]')
 };

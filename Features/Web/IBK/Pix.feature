@@ -56,6 +56,7 @@ Funcionalidade: Pix
     E clico no botão Entrar
     E preencho o campo Código com o valor "576439"
     E clico no botão Entrar da tela de Solicitar SMS
+    E clico no botão Entrar da tela de Selecionar Conta
     E clico no botão de Pix no menu lateral na tela de Home
     E clico no botão Copia e cola na tela de Pix
     E colo o código pix copiado anteriormente na tela de Pix Copia e Cola na etapa de Pagar
@@ -66,4 +67,4 @@ Funcionalidade: Pix
     E clico no botão Aprovar na tela de Detalhes da transação
     E digito o PIN "112233" no pop-up Digite o seu PIN na tela de Detalhes da transação
     E clico no botão Confirmar no pop-up Digite o seu PIN na tela de Detalhes da transação
-    Então a tela Comprovante da transação deve ser apresentada
+    Então a tela Aprovação deve ser apresentada
