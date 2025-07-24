@@ -10,7 +10,7 @@ export const TransferPixElementsMap = {
   //Descrição-----------------------------------------------------------------------------------------------------------------
   textAreaDescription: By.xpath("//textarea[contains(@class, 'MuiOutlinedInput-inputMultiline')]"),
   //Confirmar-----------------------------------------------------------------------------------------------------------------
-  btnConfirm: By.xpath("//button[.//span[contains(@class, 'advanced-button__inner__text') and text()='Confirmar']]"),
+  btnConfirm: By.xpath("//button[descendant-or-self::*[normalize-space(text())='Confirmar']]"),
   numericKeyboard: (number: string) => By.xpath(`//p[contains(@class, 'confirmation-modal__number-grid__digit') and text()='${number}']`),
-  btnConfirmPopUp: By.xpath("//div[contains(@class, 'confirmation-modal__button-container')]//button[.//span[contains(@class, 'advanced-button__inner__text') and text()='Confirmar']]")
+  btnConfirmPopUp: By.xpath("//button[contains(@class, 'MuiButton-fullWidth') and descendant-or-self::*[normalize-space(text())='Confirmar']]"),
 };

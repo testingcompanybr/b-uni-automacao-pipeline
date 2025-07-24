@@ -10,7 +10,7 @@ Then('verifico que estou na tela de Comprovante', async function (this: World) {
   await sleep(3000);
   const actual_driver = await this.driver as WebDriver;
   const url = await actual_driver.getCurrentUrl();
-  expect(url).to.include('https://ibk.stg.ser.buni.digital/inicio/detalhes/');
+  expect(url.startsWith('https://ibk.stg.ser.buni.digital/inicio/detalhes/')).to.be.true;
 });
 
 Then('o Tipo de transação deve ser {string} na tela de Comprovante', async function (this: World, typeTransaction: string) {
@@ -109,5 +109,5 @@ Then('a tela Comprovante da transação deve ser apresentada', async function (t
   await sleep(3000);
   const actual_driver = await this.driver as WebDriver;
   const url = await actual_driver.getCurrentUrl();
-  expect(url).to.include('https://ibk.stg.ser.buni.digital/inicio/detalhes/');
+  expect(url.startsWith('https://ibk.stg.ser.buni.digital/inicio/detalhes/')).to.be.true;
 });
