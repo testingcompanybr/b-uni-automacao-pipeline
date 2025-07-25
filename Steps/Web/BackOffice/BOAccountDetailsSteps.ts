@@ -31,3 +31,9 @@ Then('não deve haver mais nenhum dispositivo cadastrado referente a conta selec
   const text = await paginationTextElement.getText();
   expect(text).to.equal('0-0 of 0');
 });
+
+When('clico no botão Limites transacionais na tela de Detalhes da Conta', async function (this: World) {
+  const bOAccountDetailsActions = new BOAccountDetailsActions(this.driver as WebDriver);
+  await bOAccountDetailsActions.clickBtnTransactionLimits();
+  await sleep(3000);
+});

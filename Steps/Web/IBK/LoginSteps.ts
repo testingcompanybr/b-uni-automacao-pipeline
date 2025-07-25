@@ -41,3 +41,7 @@ Then('verifico que estou na tela de Login', async function (this: World) {
   const url = await actual_driver.getCurrentUrl();
   expect(url).to.equal('https://ibk.stg.ser.buni.digital/');
 });
+
+When('vou para a página de Login do IBK', async function (this: World) {
+  await goToLoginPage(this.driver as WebDriver);
+});

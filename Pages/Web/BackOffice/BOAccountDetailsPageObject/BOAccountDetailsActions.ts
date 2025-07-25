@@ -34,4 +34,16 @@ async removeAllRegisteredDevicesFromAccount(): Promise<void> {
   }
 }
 
+async clickBtnTransactionLimits(): Promise<void> {
+  const btnTransactionLimits: WebElement = await this.waitForElement(BOAccountDetailsElementsMap.btnTransactionLimits);
+
+  await this.driver.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", btnTransactionLimits);
+
+  await this.driver.wait(until.elementIsVisible(btnTransactionLimits), 5000);
+  await this.driver.wait(until.elementIsEnabled(btnTransactionLimits), 5000);
+
+  await this.driver.sleep(500);
+  await this.driver.executeScript("arguments[0].click();", btnTransactionLimits);
+}
+
 }
