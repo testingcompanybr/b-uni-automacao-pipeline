@@ -15,5 +15,6 @@ export const PayElementsMap = {
   labelFine: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Multa']"),
   labelMinValue: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Valor mínimo']"),
   labelMaxValue: By.xpath("//p[contains(@class, 'payment-details__label') and text()='Valor máximo']"),
-  txtDate: By.xpath("//p[contains(@class, 'payment-details__text') and normalize-space(text()) and string-length(text())=10 and substring(text(),3,1)='/' and substring(text(),6,1)='/']")
+  txtDate: By.xpath("//p[contains(@class, 'payment-details__text') and normalize-space(text()) and string-length(text())=10 and substring(text(),3,1)='/' and substring(text(),6,1)='/']"),
+  txtMessage: By.css('.ant-message-error span:last-of-type')
 };

@@ -37,3 +37,23 @@ When('clico no botão Limites transacionais na tela de Detalhes da Conta', async
   await bOAccountDetailsActions.clickBtnTransactionLimits();
   await sleep(3000);
 });
+
+When('clico no botão Editar na linha que contém os valores {string}, {string}, {string} na tela de Detalhes da Conta', async function (this: World, transactionType: string, timePeriod: string, limitType: string) {
+  const bOAccountDetailsActions = new BOAccountDetailsActions(this.driver as WebDriver);  
+  await bOAccountDetailsActions.clickEditButtonByRowValues(transactionType,timePeriod,limitType);
+});
+
+When('preencho campo Novo limite com o valor {string} na janela Edição de limite de conta na tela de Detalhes da Conta', async function (this: World, newLimit: string) {
+  const bOAccountDetailsActions = new BOAccountDetailsActions(this.driver as WebDriver);  
+  await bOAccountDetailsActions.fillNewLimit(newLimit);
+});
+
+When('clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta', async function (this: World) {
+  const bOAccountDetailsActions = new BOAccountDetailsActions(this.driver as WebDriver);  
+  await bOAccountDetailsActions.clickBtnConfirmNewLimit();
+});
+
+When('clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta', async function (this: World) {
+  const bOAccountDetailsActions = new BOAccountDetailsActions(this.driver as WebDriver);  
+  await bOAccountDetailsActions.btnConfirmNewLimitDialog();
+});

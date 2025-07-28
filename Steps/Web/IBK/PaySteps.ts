@@ -35,7 +35,7 @@ When('digito o PIN {string} no pop-up Digite o seu PIN na tela de Pagar na etapa
 When('clico no botão Confirmar no pop-up Digite o seu PIN na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
   const payActions = new PayActions(this.driver as WebDriver);
   await payActions.clickBtnConfirmPopUp();
-  await sleep(5000);
+  await sleep(2000);
 });
 
 Then('o campo de Descontos deve ser exibido na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
@@ -85,7 +85,7 @@ Then('o campo de Valor máximo deve ser exibido na tela de Pagar na etapa de Det
 Then('preencho o campo Valor do documento com o valor {string} na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World, value: string) {
   const payActions = new PayActions(this.driver as WebDriver);
   await payActions.fillInputValue(value);
-  await sleep(2000);
+  await sleep(1000);
 });
 
 Then('o botão Avançar deve estar habilitado na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
@@ -94,4 +94,11 @@ Then('o botão Avançar deve estar habilitado na tela de Pagar na etapa de Detal
 
 Then('o botão Avançar deve estar desabilitado na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
   //
+});
+
+Then('a mensagem {string} deve ser exibida na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World, message: string) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.findElement(PayElementsMap.txtMessage);
+  const textMessage = await element.getText();
+  expect(textMessage).to.equal(message);
 });

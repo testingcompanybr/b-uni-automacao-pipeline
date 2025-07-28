@@ -106,7 +106,7 @@ Then('a mensagem {string} deve ser apresentada na tela de Comprovante', async fu
 });
 
 Then('a tela Comprovante da transação deve ser apresentada', async function (this: World) {
-  await sleep(3000);
+  await sleep(5000);
   const actual_driver = await this.driver as WebDriver;
   const url = await actual_driver.getCurrentUrl();
   expect(url.startsWith('https://ibk.stg.ser.buni.digital/inicio/detalhes/')).to.be.true;

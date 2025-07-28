@@ -1,4 +1,4 @@
-import { WebDriver, WebElement, By, until } from 'selenium-webdriver';
+import { WebDriver, WebElement, By, until, Key } from 'selenium-webdriver';
 import { BOAccountDetailsElementsMap } from './BOAccountDetailsElementsMap';
 
 export class BOAccountDetailsActions {constructor(private driver: WebDriver) {}
@@ -44,6 +44,29 @@ async clickBtnTransactionLimits(): Promise<void> {
 
   await this.driver.sleep(500);
   await this.driver.executeScript("arguments[0].click();", btnTransactionLimits);
+}
+
+async clickEditButtonByRowValues(transactionType: string,timePeriod: string, limitType: string): Promise<void> {
+    const btnEdit: WebElement = await this.waitForElement(BOAccountDetailsElementsMap.btnEditRowByValues(transactionType, timePeriod, limitType));
+    await btnEdit.click();
+}
+
+async fillNewLimit(newLimit: string): Promise<void> {
+    const newLimitInput: WebElement = await this.waitForElement(BOAccountDetailsElementsMap.inputNewLimit);
+    await newLimitInput.sendKeys(Key.chord(Key.CONTROL, 'a'));
+    await newLimitInput.sendKeys(newLimit);
+}
+
+async clickBtnConfirmNewLimit(): Promise<void> {
+    const btnConfirmNewLimit: WebElement = await this.waitForElement(BOAccountDetailsElementsMap.btnConfirmNewLimit);
+    await btnConfirmNewLimit.click();
+}
+
+async btnConfirmNewLimitDialog(): Promise<void> {
+    const btnConfirmNewLimitLimitDialog: WebElement = await this.waitForElement(BOAccountDetailsElementsMap.btnConfirmNewLimitDialog);
+    await this.driver.wait(until.elementIsVisible(btnConfirmNewLimitLimitDialog), 5000);
+    await this.driver.wait(until.elementIsEnabled(btnConfirmNewLimitLimitDialog), 5000);
+    await btnConfirmNewLimitLimitDialog.click();
 }
 
 }

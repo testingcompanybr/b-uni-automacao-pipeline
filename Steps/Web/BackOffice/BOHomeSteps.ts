@@ -27,6 +27,7 @@ When('clico no botão para visualizar o registro da primeira linha', async funct
 When('clico no botão para mostrar os Filtros avançados', async function (this: World) {
   const boHomeActions = new BOHomeActions(this.driver as WebDriver);
   await boHomeActions.clickAdvancedFilters();
+  await sleep(1000);
 });
 
 When('preencho o campo CPF ou CNPJ com o valor {string} nos Filtros avançados', async function (this: World, cpf: string) {
