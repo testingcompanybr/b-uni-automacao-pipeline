@@ -28,5 +28,5 @@ When('digito o PIN {string} no pop-up Digite o seu PIN na tela de Pix Copia e Co
 When('clico no botão Confirmar no pop-up Digite o seu PIN na tela de Pix Copia e Cola na etapa de Detalhes', async function (this: World) {
   const transferPixActions = new TransferPixActions(this.driver as WebDriver);
   await transferPixActions.clickBtnConfirmPopUp();
-  await sleep(5000);
+  await sleep(3000);
 });
