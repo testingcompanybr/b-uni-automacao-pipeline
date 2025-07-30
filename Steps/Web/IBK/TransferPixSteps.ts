@@ -1,8 +1,10 @@
-import { When } from '@cucumber/cucumber';
+import { Then, When } from '@cucumber/cucumber';
 import { World } from '../../../Support/World';
 import { WebDriver } from 'selenium-webdriver';
 import { TransferPixActions } from '../../../Pages/Web/IBK/TransferPixPageObject/TransferPixActions';
+import { TransferPixElementsMap } from '../../../Pages/Web/IBK/TransferPixPageObject/TransferPixElementsMap';
 import { sleep } from '../../../Support/Utils';
+import { expect } from 'chai';
 
 When('preencho o campo Buscar por nome com o valor {string} na tela de Transferir Via Pix', async function (this: World, name: string) {
   const transferPixActions = new TransferPixActions(this.driver as WebDriver);
@@ -48,4 +50,11 @@ When('clico no botão Confirmar no pop-up Digite o seu PIN na tela de Transferir
   const transferPixActions = new TransferPixActions(this.driver as WebDriver);
   await transferPixActions.clickBtnConfirmPopUp();
   await sleep(15000);
+});
+
+Then('a mensagem {string} deve ser exibida na tela de Pix Copia e Cola na etapa de Detalhes', async function (this: World, message: string) {
+  const actual_driver = await this.driver as WebDriver;
+  const element = await actual_driver.findElement(TransferPixElementsMap.txtMessage);
+  const textMessage = await element.getText();
+  expect(textMessage).to.equal(message);
 });

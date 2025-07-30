@@ -42,4 +42,9 @@ async clickBtnPay(): Promise<void> {
     await btnPay.click();
 }
 
+async clickBtnTransfer(): Promise<void> {
+    const btnTrasfer: WebElement = await this.waitForElement(HomeElementsMap.btnTrasfer);
+    await btnTrasfer.click();
+}
+
 }

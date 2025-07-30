@@ -13,4 +13,5 @@ export const TransferPixElementsMap = {
   btnConfirm: By.xpath("//button[descendant-or-self::*[normalize-space(text())='Confirmar']]"),
   numericKeyboard: (number: string) => By.xpath(`//p[contains(@class, 'confirmation-modal__number-grid__digit') and text()='${number}']`),
   btnConfirmPopUp: By.xpath("//button[contains(@class, 'MuiButton-fullWidth') and descendant-or-self::*[normalize-space(text())='Confirmar']]"),
+  txtMessage: By.css('.ant-message-error span:last-of-type')
 };

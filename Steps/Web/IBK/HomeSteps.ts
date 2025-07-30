@@ -62,3 +62,8 @@ When('clico no botão de Pagar na tela de Home', async function (this: World) {
   const homeActions = new HomeActions(this.driver as WebDriver);
   await homeActions.clickBtnPay();
 });
+
+When('clico no botão de Transferir na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnTransfer();
+});
