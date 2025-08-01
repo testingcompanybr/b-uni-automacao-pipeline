@@ -62,7 +62,7 @@ Funcionalidade: Boleto
     Dado estou na página Home do Internet Banking
     Quando clico no botão de Pagar na tela de Home
     E clico no botão Pagar Boleto na tela de Pagar na etapa de Tipo do Pagamento
-    E preencho o campo Código do Boleto com o valor "34191090081374365317561721160002598570000026461" na tela de Pagar na etapa de Código de barras
+    E preencho o campo Código do Boleto com o valor "60490001171200559520701993996949490600000454576" na tela de Pagar na etapa de Código de barras
     E clico no botão Avançar na tela de Pagar na etapa de Código de barras
     Então o campo de Juros deve ser exibido na tela de Pagar na etapa de Detalhes do pagamento
     E o campo Data de vencimento deve ter uma data menor que a data atual na tela de Pagar na etapa de Detalhes do pagamento

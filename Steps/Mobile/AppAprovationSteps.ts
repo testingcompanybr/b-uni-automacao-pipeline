@@ -16,7 +16,4 @@ When('clico no botão Aprovar no pop-up Aprovar transação na tela de Aprovaç�
 When('digito o PIN {string} na tela de Aprovações do App', async function (this: World, pinCode: string) {
   const aprovationActions = new AprovationActions(this.driver as Browser);
   await aprovationActions.fillPINCode(pinCode);
-
-  const mobileDriver = this.driver as Browser;
-  await mobileDriver.pause(6000);
 });
