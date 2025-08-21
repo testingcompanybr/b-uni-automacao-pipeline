@@ -115,7 +115,7 @@ Funcionalidade: BackOffice Limites
     E preencho o campo Código com o valor "576439"
     E clico no botão Entrar da tela de Solicitar SMS
     E clico no botão Entrar da tela de Selecionar Conta
-    E clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão de PIX na tela de Home
     E clico no botão Cobrar na tela de Pix
     E preencho o campo valor com "200" na tela Receber na etapa de Valor
     E clico no botão Continuar na tela Receber na etapa de Valor
@@ -130,7 +130,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Entrar
     E preencho o campo Código com o valor "576439"
     E clico no botão Entrar da tela de Solicitar SMS
-    E clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão de PIX na tela de Home
     E clico no botão Copia e cola na tela de Pix
     E colo o código pix copiado anteriormente na tela de Pix Copia e Cola na etapa de Pagar
     E clico no botão Continuar na tela de Pix Copia e Cola na etapa de Pagar
@@ -169,7 +169,7 @@ Funcionalidade: BackOffice Limites
     E preencho o campo Código com o valor "576439"
     E clico no botão Entrar da tela de Solicitar SMS
     E clico no botão Entrar da tela de Selecionar Conta
-    E clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão de PIX na tela de Home
     E clico no botão Cobrar na tela de Pix
     E preencho o campo valor com "400" na tela Receber na etapa de Valor
     E clico no botão Continuar na tela Receber na etapa de Valor
@@ -184,7 +184,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Entrar
     E preencho o campo Código com o valor "576439"
     E clico no botão Entrar da tela de Solicitar SMS
-    E clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão de PIX na tela de Home
     E clico no botão Copia e cola na tela de Pix
     E colo o código pix copiado anteriormente na tela de Pix Copia e Cola na etapa de Pagar
     E clico no botão Continuar na tela de Pix Copia e Cola na etapa de Pagar

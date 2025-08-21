@@ -1,5 +1,4 @@
-import { WebDriver } from 'selenium-webdriver';
-import { By } from 'selenium-webdriver';
+import { WebDriver, until, By, WebElement } from 'selenium-webdriver';
 
 export async function goToLoginPage(driver: WebDriver): Promise<void> {
   await driver.get('https://ibk.stg.ser.buni.digital/');
@@ -68,4 +67,87 @@ export function CNPJGenerator(): string {
 
 export async function scrollDown(driver: WebDriver, pixels: number = 1000): Promise<void> {
   await driver.executeScript(`window.scrollBy(0, ${pixels});`);
+}
+
+export type WaitCondition =
+  | { type: 'urlIs', value: string }
+  | { type: 'urlContains', value: string }
+  | { type: 'urlStartsWith', value: string }
+  | { type: 'elementVisible', locator: By }
+  | { type: 'elementClickable', locator: By }
+  | { type: 'textPresent', locator: By, text: string }
+  | { type: 'elementInvisible', locator: By }
+  | { type: 'elementDisabled', locator: By }
+  | { type: 'tabActive', locator: By, activeClass: string };
+
+export async function waitFor(driver: WebDriver, condition: WaitCondition, timeout = 30000): Promise<WebElement | string | boolean> {
+  switch (condition.type) {
+
+    case 'urlIs':
+      await driver.wait(async () => {
+        const currentUrl = await driver.getCurrentUrl();
+        return currentUrl === condition.value;
+      }, timeout, `A URL não mudou para ${condition.value} dentro de ${timeout}ms`);
+      return await driver.getCurrentUrl();
+
+    case 'elementVisible': {
+      const el = await driver.wait(until.elementLocated(condition.locator), timeout);
+      await driver.wait(until.elementIsVisible(el), timeout);
+      return el;
+    }
+
+    case 'elementClickable': {
+      const el = await driver.wait(until.elementLocated(condition.locator), timeout);
+      await driver.wait(until.elementIsVisible(el), timeout);
+      await driver.wait(until.elementIsEnabled(el), timeout);
+      return el;
+    }
+
+    case 'textPresent': {
+      const el = await driver.wait(until.elementLocated(condition.locator), timeout);
+      await driver.wait(until.elementTextContains(el, condition.text), timeout);
+      return el;
+    }
+
+    case 'elementInvisible': {
+      const el = await driver.wait(until.elementLocated(condition.locator), timeout);
+      await driver.wait(until.elementIsNotVisible(el), timeout);
+      return true;
+    }
+
+    case 'elementDisabled': {
+      const el = await driver.wait(until.elementLocated(condition.locator), timeout);
+      await driver.wait(async () => {
+        const pointerEvents = await driver.executeScript(
+          'return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");',
+          el
+        );
+        return pointerEvents === 'none';
+      }, timeout, `O elemento ${condition.locator} não ficou desabilitado dentro de ${timeout}ms`);
+      return el;
+    }
+
+    case 'tabActive': {
+      const el = await driver.wait(until.elementLocated(condition.locator), timeout);
+      await driver.wait(async () => {
+        const classAttr = await el.getAttribute('class');
+        return classAttr.includes(condition.activeClass);
+      }, timeout, `A aba ${condition.locator} não ficou ativa dentro de ${timeout}ms`);
+      return el;
+    }
+
+    case 'urlContains':
+      await driver.wait(until.urlContains(condition.value), timeout);
+      return driver.getCurrentUrl();
+
+    case 'urlStartsWith':
+      await driver.wait(async () => {
+        const url = await driver.getCurrentUrl();
+        return url.startsWith(condition.value);
+      }, timeout, `A URL não iniciou com "${condition.value}" dentro de ${timeout}ms`);
+      return driver.getCurrentUrl();
+
+    default:
+      throw new Error(`Tipo de espera não suportado: ${(condition as any).type}`);
+  }
 }

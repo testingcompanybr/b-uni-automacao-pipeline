@@ -4,13 +4,12 @@ import { ExtractElementsMap } from '../../../Pages/Web/IBK/ExtractPageObject/Ext
 import { ExtractActions } from '../../../Pages/Web/IBK/ExtractPageObject/ExtractActions';
 import { World } from '../../../Support/World';
 import { WebDriver } from 'selenium-webdriver';
-import { sleep } from '../../../Support/Utils';
+import { sleep, waitFor } from '../../../Support/Utils';
 
 Then('verifico que estou na tela de Extrato', async function (this: World) {
-  await sleep(3000);
-  const actual_driver = await this.driver as WebDriver;
-  const url = await actual_driver.getCurrentUrl();
-  expect(url).to.equal('https://ibk.stg.ser.buni.digital/extrato');
+  const driver = this.driver as WebDriver;
+  const currentUrl = await waitFor(driver, { type: 'urlIs', value: 'https://ibk.stg.ser.buni.digital/extrato' }, 30000);
+  expect(currentUrl).to.equal('https://ibk.stg.ser.buni.digital/extrato');
 });
 
 Then('a última movimentação deve ser transação de PIX para {string} no valor de {string}', async function (this: World, expectedName: string, expectedValue: string) {

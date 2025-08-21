@@ -2,8 +2,8 @@ import { When, Then } from '@cucumber/cucumber';
 import { PayActions } from '../../../Pages/Web/IBK/PayPageObject/PayActions';
 import { PayElementsMap } from '../../../Pages/Web/IBK/PayPageObject/PayElementsMap';
 import { World } from '../../../Support/World';
-import { until, WebDriver } from 'selenium-webdriver';
-import { sleep } from '../../../Support/Utils';
+import { By, until, WebDriver } from 'selenium-webdriver';
+import { sleep, waitFor } from '../../../Support/Utils';
 import { expect } from 'chai';
 
 When('clico no botão Pagar Boleto na tela de Pagar na etapa de Tipo do Pagamento', async function (this: World) {
@@ -19,7 +19,8 @@ When('preencho o campo Código do Boleto com o valor {string} na tela de Pagar n
 When('clico no botão Avançar na tela de Pagar na etapa de Código de barras', async function (this: World) {
   const payActions = new PayActions(this.driver as WebDriver);
   await payActions.clickBtnAdvance();
-  await sleep(3000);
+
+  await waitFor(this.driver as WebDriver, { type: 'tabActive', locator: By.css('div[data-node-key="3"]'), activeClass: 'ant-tabs-tab-active' }, 15000);
 });
 
 When('clico no botão Avançar na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
@@ -35,7 +36,6 @@ When('digito o PIN {string} no pop-up Digite o seu PIN na tela de Pagar na etapa
 When('clico no botão Confirmar no pop-up Digite o seu PIN na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {
   const payActions = new PayActions(this.driver as WebDriver);
   await payActions.clickBtnConfirmPopUp();
-  await sleep(2000);
 });
 
 Then('o campo de Descontos deve ser exibido na tela de Pagar na etapa de Detalhes do pagamento', async function (this: World) {

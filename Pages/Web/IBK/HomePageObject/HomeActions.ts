@@ -47,4 +47,14 @@ async clickBtnTransfer(): Promise<void> {
     await btnTrasfer.click();
 }
 
+async clickBtnSeeExtract(): Promise<void> {
+    const btnSeeExtract: WebElement = await this.waitForElement(HomeElementsMap.btnSeeExtract);
+    await btnSeeExtract.click();
+}
+
+async clickBtnPIX(): Promise<void> {
+    const btnSeePIX: WebElement = await this.waitForElement(HomeElementsMap.btnPIX);
+    await btnSeePIX.click();
+}
+
 }

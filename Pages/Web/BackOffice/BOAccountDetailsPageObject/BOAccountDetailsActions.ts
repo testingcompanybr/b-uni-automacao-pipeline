@@ -17,6 +17,8 @@ async clickBtnDevices(): Promise<void> {
 
   await this.driver.sleep(500);
   await this.driver.executeScript("arguments[0].click();", btnDevices);
+
+  await this.waitForElement(By.css('div.MuiDataGrid-main'));
 }
 
 async removeAllRegisteredDevicesFromAccount(): Promise<void> {
@@ -44,6 +46,8 @@ async clickBtnTransactionLimits(): Promise<void> {
 
   await this.driver.sleep(500);
   await this.driver.executeScript("arguments[0].click();", btnTransactionLimits);
+
+  await this.waitForElement(By.css('div.MuiDataGrid-main'));
 }
 
 async clickEditButtonByRowValues(transactionType: string,timePeriod: string, limitType: string): Promise<void> {

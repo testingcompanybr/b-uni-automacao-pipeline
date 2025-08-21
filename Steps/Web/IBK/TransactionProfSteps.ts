@@ -3,14 +3,13 @@ import { expect } from 'chai';
 import { TransactionProfElementsMap } from '../../../Pages/Web/IBK/TransactionProfPageObject/TransactionProfElementsMap';
 import { TransactionProfActions } from '../../../Pages/Web/IBK/TransactionProfPageObject/TransactionProfActions';
 import { World } from '../../../Support/World';
-import { By, WebDriver } from 'selenium-webdriver';
-import { sleep, scrollDown } from '../../../Support/Utils';
+import { WebDriver } from 'selenium-webdriver';
+import { sleep, scrollDown, waitFor } from '../../../Support/Utils';
 
 Then('verifico que estou na tela de Comprovante', async function (this: World) {
-  await sleep(3000);
-  const actual_driver = await this.driver as WebDriver;
-  const url = await actual_driver.getCurrentUrl();
-  expect(url.startsWith('https://ibk.stg.ser.buni.digital/inicio/detalhes/')).to.be.true;
+  const driver = this.driver as WebDriver;
+  const currentUrl = await waitFor(driver, {type: 'urlContains',value: 'https://ibk.stg.ser.buni.digital/inicio/detalhes/'}, 30000);
+  expect(currentUrl).to.contain('https://ibk.stg.ser.buni.digital/inicio/detalhes/');
 });
 
 Then('o Tipo de transação deve ser {string} na tela de Comprovante', async function (this: World, typeTransaction: string) {
@@ -92,7 +91,7 @@ Then('clico no botão Baixar no modal de Comprovante da transação na tela de C
 Then('clico no botão Enviar por email no modal de Comprovante da transação na tela de Comprovante', async function (this: World) {
   await scrollDown(this.driver as WebDriver);
   await sleep(1000);
-  
+
   const transactionProfActions = new TransactionProfActions(this.driver as WebDriver);
   await transactionProfActions.clickBtnSendByEmail();
 });
@@ -106,8 +105,7 @@ Then('a mensagem {string} deve ser apresentada na tela de Comprovante', async fu
 });
 
 Then('a tela Comprovante da transação deve ser apresentada', async function (this: World) {
-  await sleep(5000);
-  const actual_driver = await this.driver as WebDriver;
-  const url = await actual_driver.getCurrentUrl();
-  expect(url.startsWith('https://ibk.stg.ser.buni.digital/inicio/detalhes/')).to.be.true;
+  const driver = this.driver as WebDriver;
+  const currentUrl = await waitFor(driver, {type: 'urlContains',value: 'https://ibk.stg.ser.buni.digital/inicio/detalhes/'}, 30000);
+  expect(currentUrl).to.contain('https://ibk.stg.ser.buni.digital/inicio/detalhes/');
 });

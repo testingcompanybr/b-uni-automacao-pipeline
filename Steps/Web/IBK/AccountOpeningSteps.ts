@@ -3,8 +3,8 @@ import { AccountOpeningActions } from '../../../Pages/Web/IBK/AccountOpeningPage
 import { World } from '../../../Support/World';
 import { AccountOpeningElementsMap } from '../../../Pages/Web/IBK/AccountOpeningPageObject/AccountOpeningElementsMap';
 import { expect } from 'chai';
-import { By, WebDriver } from 'selenium-webdriver';
-import { sleep } from '../../../Support/Utils';
+import { By, WebDriver, WebElement } from 'selenium-webdriver';
+import { sleep, waitFor } from '../../../Support/Utils';
 
 //PESSOA FISICA---------------------------------------------------------------------------------------------------------------
 When('preencho o campo CPF com o valor {string} na tela de Abertura de Conta', async function (this: World, cpf: string) {
@@ -123,27 +123,27 @@ When('clico no botão Continuar na tela de Abertura de Conta na etapa de Endere�
 });
 
 Then('a mensagem de erro {string} deve ser apresentada na tela de Abertura de Conta', async function (this: World, errorMessage: string) {
-  await sleep(1000);
-  const actual_driver = await this.driver as WebDriver;
-  const element = await actual_driver.findElement(AccountOpeningElementsMap.msgError);
-  const textMessage = await element.getText();
-  expect(textMessage).to.equal(errorMessage);
+  const driver = this.driver as WebDriver;
+  const element = await waitFor(driver, { type: 'textPresent', locator: AccountOpeningElementsMap.msgError, text: errorMessage }, 10000) as WebElement;
+
+  const actualText = await element.getText();
+  expect(actualText).to.equal(errorMessage);
 });
 
 Then('a mensagem de erro {string} deve ser apresentada na tela de Abertura de Conta na etapa de Validação', async function (this: World, errorMessage: string) {
-  await sleep(2000);
-  const actual_driver = await this.driver as WebDriver;
-  const element = await actual_driver.findElement(AccountOpeningElementsMap.msgErrorValidation);
-  const textMessage = await element.getText();
-  expect(textMessage).to.equal(errorMessage);
+  const driver = this.driver as WebDriver;
+  const element = await waitFor(driver, { type: 'textPresent', locator: AccountOpeningElementsMap.msgErrorValidation, text: errorMessage }, 10000) as WebElement;
+
+  const actualText = await element.getText();
+  expect(actualText).to.equal(errorMessage);
 });
 
 Then('a mensagem de erro {string} deve ser apresentada na tela de Abertura de Conta na etapa de Endereço', async function (this: World, errorMessage: string) {
-  await sleep(1000);
-  const actual_driver = await this.driver as WebDriver;
-  const element = await actual_driver.findElement(AccountOpeningElementsMap.msgErrorAdress);
-  const textMessage = await element.getText();
-  expect(textMessage).to.equal(errorMessage);
+  const driver = this.driver as WebDriver;
+  const element = await waitFor(driver, { type: 'textPresent', locator: AccountOpeningElementsMap.msgErrorAdress, text: errorMessage }, 10000) as WebElement;
+
+  const actualText = await element.getText();
+  expect(actualText).to.equal(errorMessage);
 });
 
 When('clico no botão Começar verificação na tela de Abertura de Conta na etapa de Identidade', async function (this: World) {
@@ -214,10 +214,10 @@ When('começo o processo de verificação da IDWall na tela de Abertura de Conta
 });
 
 When('faço o envio do documento CNH na tela de Abertura de Conta na etapa de Identidade', async function (this: World) {
-  await sleep(3000);
+  await sleep(2000);
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
   await accountOpeningActions.uploadDocument();
-  await sleep(3000);
+  await sleep(2000);
 });
 
 When('clico no botão Enviar na tela de Abertura de Conta na etapa de Identidade', async function (this: World) {
@@ -226,26 +226,26 @@ When('clico no botão Enviar na tela de Abertura de Conta na etapa de Identidade
 });
 
 Then('o botão Continuar deve estar desabilitado na etapa de Validação', async function (this: World) {
-  await sleep(1000);
-  const actual_driver = await this.driver as WebDriver;
-  const button = await actual_driver.findElement(By.css('button[data-testid="advance-approval-device-submit"]'));
-  const pointerEvents = await actual_driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");', button);
+  const driver = this.driver as WebDriver;
+  const button = await waitFor(driver, {type: 'elementDisabled',locator: By.css('button[data-testid="advance-approval-device-submit"]')}, 10000);
+  const pointerEvents = await driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");',button);
+
   expect(pointerEvents).to.equal('none');
 });
 
 Then('o botão Continuar deve estar desabilitado na etapa de Credenciais', async function (this: World) {
-  await sleep(1000);
-  const actual_driver = await this.driver as WebDriver;
-  const button = await actual_driver.findElement(By.css('button[data-testid="advance-credentials-submit"]'));
-  const pointerEvents = await actual_driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");', button);
+  const driver = this.driver as WebDriver;
+  const button = await waitFor(driver, {type: 'elementDisabled',locator: By.css('button[data-testid="advance-credentials-submit"]')}, 10000);
+  const pointerEvents = await driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");',button);
+
   expect(pointerEvents).to.equal('none');
 });
 
 Then('o botão Continuar deve estar desabilitado na etapa de Endereço', async function (this: World) {
-  await sleep(1000);
-  const actual_driver = await this.driver as WebDriver;
-  const button = await actual_driver.findElement(By.css('button[data-testid="advance-address-submit"]'));
-  const pointerEvents = await actual_driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");', button);
+  const driver = this.driver as WebDriver;
+  const button = await waitFor(driver, {type: 'elementDisabled',locator: By.css('button[data-testid="advance-address-submit"]')}, 10000);
+  const pointerEvents = await driver.executeScript('return window.getComputedStyle(arguments[0]).getPropertyValue("pointer-events");',button);
+
   expect(pointerEvents).to.equal('none');
 });
 
@@ -453,14 +453,13 @@ When('clico no botão Pular na tela de Abertura de Conta Juridica na etapa de Id
 });
 
 When('faço o envio do documento CNH na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
-  await sleep(3000);
+  await sleep(2000);
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
   await accountOpeningActions.uploadDocument();
-  await sleep(3000);
+  await sleep(2000);
 });
 
 When('clico no botão Enviar na tela de Abertura de Conta Juridica na etapa de Identidade', async function (this: World) {
   const accountOpeningActions = new AccountOpeningActions(this.driver as WebDriver);
   await accountOpeningActions.clickBtnSend();
 });
-

@@ -100,8 +100,22 @@ async fillPublicPlace(publicplace: string): Promise<void> {
 }
 
 async fillNumberAdressForm(numberAdress: string): Promise<void> {
-    await sleep(7000);
-    
+    await this.driver.wait(async () => {
+        const ufInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldUF);
+        const neighborhoodInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldNeightborhood);
+        const publicPlaceInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldPublicPlace);
+
+        const ufValue = await ufInput.getAttribute('value');
+        const neighborhoodValue = await neighborhoodInput.getAttribute('value');
+        const publicPlaceValue = await publicPlaceInput.getAttribute('value');
+
+        return (
+            (ufValue && ufValue.trim() !== '') ||
+            (neighborhoodValue && neighborhoodValue.trim() !== '') ||
+            (publicPlaceValue && publicPlaceValue.trim() !== '')
+        );
+    }, 25000, 'Nenhum dos campos UF, Bairro ou Logradouro foi preenchido a tempo.');
+
     const numberAdressInput: WebElement = await this.waitForElement(AccountOpeningElementsMap.fieldNumberAdress);
     await numberAdressInput.sendKeys(numberAdress);
 }

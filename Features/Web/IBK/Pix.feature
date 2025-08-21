@@ -12,7 +12,7 @@ Funcionalidade: Pix
 
   Cenário: Pix de Pessoa Fisíca validando extrato do remetente
     Dado estou na página Home do Internet Banking
-    Quando clico no botão de Pix no menu lateral na tela de Home
+    Quando clico no botão de PIX na tela de Home
     E clico no botão Transferir na tela de Pix
     E preencho o campo Buscar por nome com o valor "Martin" na tela de Transferir Via Pix
     E clico na conta filtrada na tela de Transferir Via Pix na etapa de Contatos
@@ -41,7 +41,7 @@ Funcionalidade: Pix
 
   Cenário: Tranferência Pix Copia e Cola
     Dado estou na página Home do Internet Banking
-    Quando clico no botão de Pix no menu lateral na tela de Home
+    Quando clico no botão de PIX na tela de Home
     E clico no botão Cobrar na tela de Pix
     E preencho o campo valor com "1" na tela Receber na etapa de Valor
     E clico no botão Continuar na tela Receber na etapa de Valor
@@ -57,7 +57,7 @@ Funcionalidade: Pix
     E preencho o campo Código com o valor "576439"
     E clico no botão Entrar da tela de Solicitar SMS
     E clico no botão Entrar da tela de Selecionar Conta
-    E clico no botão de Pix no menu lateral na tela de Home
+    E clico no botão de PIX na tela de Home
     E clico no botão Copia e cola na tela de Pix
     E colo o código pix copiado anteriormente na tela de Pix Copia e Cola na etapa de Pagar
     E clico no botão Continuar na tela de Pix Copia e Cola na etapa de Pagar

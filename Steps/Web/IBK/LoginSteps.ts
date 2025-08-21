@@ -4,7 +4,7 @@ import { goToLoginPage } from '../../../Support/Utils';
 import { World } from '../../../Support/World';
 import { expect } from 'chai';
 import { WebDriver } from 'selenium-webdriver';
-import { sleep } from '../../../Support/Utils';
+import { waitFor } from '../../../Support/Utils';
 
 Given('que estou na página de Login', async function (this: World) {
   await goToLoginPage(this.driver as WebDriver);
@@ -36,10 +36,9 @@ When('clico no link Criar Conta', async function (this: World) {
 });
 
 Then('verifico que estou na tela de Login', async function (this: World) {
-  await sleep(3000);
-  const actual_driver = await this.driver as WebDriver;
-  const url = await actual_driver.getCurrentUrl();
-  expect(url).to.equal('https://ibk.stg.ser.buni.digital/');
+  const driver = this.driver as WebDriver;
+  const currentUrl = await waitFor(driver, { type: 'urlIs', value: 'https://ibk.stg.ser.buni.digital/' }, 30000);
+  expect(currentUrl).to.equal('https://ibk.stg.ser.buni.digital/');
 });
 
 When('vou para a página de Login do IBK', async function (this: World) {

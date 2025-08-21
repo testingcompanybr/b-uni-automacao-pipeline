@@ -12,7 +12,7 @@ Funcionalidade: Chave Pix
 
   Cenário: Criação de Chave Pix aleatória e depois apagar
     Dado estou na página Home do Internet Banking
-    Quando clico no botão de Pix no menu lateral na tela de Home
+    Quando clico no botão de PIX na tela de Home
     E clico no botão Criar chave na tela de Pix
     E clico no botão Chave aleatória na tela de Nova Chave na etapa de Tipo de chave
     E clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave
@@ -25,7 +25,7 @@ Funcionalidade: Chave Pix
 
   Cenário: Criação de Chave Pix CPF/CNPJ e depois apagar
     Dado estou na página Home do Internet Banking
-    Quando clico no botão de Pix no menu lateral na tela de Home
+    Quando clico no botão de PIX na tela de Home
     E clico no botão Criar chave na tela de Pix
     E clico no botão CPF CNPJ na tela de Nova Chave na etapa de Tipo de chave
     E clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave
@@ -38,7 +38,7 @@ Funcionalidade: Chave Pix
 
   Cenário: Criação de Chave Pix aleatória
     Dado estou na página Home do Internet Banking
-    Quando clico no botão de Pix no menu lateral na tela de Home
+    Quando clico no botão de PIX na tela de Home
     E clico no botão Criar chave na tela de Pix
     E clico no botão Chave aleatória na tela de Nova Chave na etapa de Tipo de chave
     E clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave
@@ -48,7 +48,7 @@ Funcionalidade: Chave Pix
 
   Cenário: Criação de Chave Pix CPF/CNPJ
     Dado estou na página Home do Internet Banking
-    Quando clico no botão de Pix no menu lateral na tela de Home
+    Quando clico no botão de PIX na tela de Home
     E clico no botão Criar chave na tela de Pix
     E clico no botão CPF CNPJ na tela de Nova Chave na etapa de Tipo de chave
     E clico no botão Avançar na tela de Nova Chave na etapa de Tipo de chave

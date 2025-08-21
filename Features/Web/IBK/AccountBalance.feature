@@ -17,5 +17,5 @@ Funcionalidade: Saldo em Conta
 
   Cenário: Verificar Extrato Da Conta
     Dado estou na página Home do Internet Banking
-    Quando clico no botão de Extrato no menu lateral na tela de Home
+    Quando clico no botão de Ver Extrato na tela de Home
     Então verifico que estou na tela de Extrato

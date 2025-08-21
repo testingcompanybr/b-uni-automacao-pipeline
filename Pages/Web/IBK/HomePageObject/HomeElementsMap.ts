@@ -7,6 +7,7 @@ export const HomeElementsMap = {
   btnProfile: By.css('img.advanced-header__avatar_img'),
   btnProfileLogout: By.xpath("//p[@class='profile__text' and text()='Sair']"),
   btnPix: By.css("[testid='home_PIX_click']"),
+  btnPIX: By.xpath("//p[@class='icon-card__text' and text()='Pix']"),
   btnTrasfer: By.xpath("//p[@class='icon-card__text' and text()='Transferir']"),
   btnReceive: By.xpath("//p[@class='icon-card__text' and text()='Receber']"),
   btnPay: By.xpath("//p[@class='icon-card__text' and text()='Pagar']"),
