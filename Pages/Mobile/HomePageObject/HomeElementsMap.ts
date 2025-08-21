@@ -6,4 +6,5 @@ export const HomeElementsMap = {
   btnPay: 'android=new UiSelector().description("Pagar")',
   btnPayWithBillet: 'android=new UiSelector().description("Pagar boleto, Pague contas de consumo, boletos e outros documentos com código de barras.")',
   txtTransactionSent: 'android=new UiSelector().text("Transação realizada com sucesso")',
+  txtLimitReached: 'android=new UiSelector().resourceId("br.com.fintech.novo.buni.stg.digital:id/snackbar_text")'
 };
