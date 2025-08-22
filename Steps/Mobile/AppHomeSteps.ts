@@ -62,3 +62,13 @@ Then('a mensagem {string} deve ser exibida na tela de Home do App', async functi
   const actualText = await element.getText();
   expect(actualText).to.equal(expectedMessage);
 });
+
+When('clico no botão Transferir na tela de Home do App', async function (this: World) {
+  const homeActions = new HomeActions(this.mobileDriver!);
+  await homeActions.clickBtnTransfer();
+});
+
+When('clico no botão TED na tela de Home do App', async function (this: World) {
+  const homeActions = new HomeActions(this.mobileDriver!);
+  await homeActions.clickBtnTransferTED();
+});

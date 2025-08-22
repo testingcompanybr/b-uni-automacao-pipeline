@@ -29,4 +29,14 @@ export class HomeActions {
     const btn = await this.driver.$(bySelector(HomeElementsMap.btnPayWithBillet));
     await btn.click();
   }
+
+  async clickBtnTransfer() {
+    const btn = await this.driver.$(bySelector(HomeElementsMap.btnTransfer));
+    await btn.click();
+  }
+
+  async clickBtnTransferTED() {
+    const btn = await this.driver.$(bySelector(HomeElementsMap.btnTransferTED));
+    await btn.click();
+  }
 }

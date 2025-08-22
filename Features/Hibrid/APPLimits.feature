@@ -1,4 +1,4 @@
-# language: pt
+language: pt
 @hibrid @mobileLimites
 Funcionalidade: Limites aplicativo
 
@@ -107,3 +107,99 @@ Funcionalidade: Limites aplicativo
     E digito o PIN "112233" na tela de Pagar conta do App
     E clico no botão Ver Comprovante na tela de Pagar conta do App
     Então a tela de Comprovante do App deve ser exibida
+
+  Cenário: Transação de TED com limite excedido no aplicativo
+    Dado que estou na tela Home do Backoffice
+    Quando clico no botão para mostrar os Filtros avançados
+    E preencho o campo CPF ou CNPJ com o valor "17698030091" nos Filtros avançados
+    E clico no botão Filtrar nos Filtros avançados
+    E clico no botão para visualizar o registro filtrado
+    E clico no botão Limites transacionais na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "DIURNO", "PERÍODO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999999" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "DIURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "100" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "NOTURNO", "PERÍODO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999999" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "NOTURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "100" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E encerro o navegador web
+    E acesso o Aplicativo
+    E clico em Permitir no dialogo de notificações do Android
+    E clico no botão Entrar na tela Inicial do App
+    E preencho o campo CPF com o valor "cabrito" na tela de Login do App
+    E clico no botão Continuar na tela de Login do App
+    E preencho o campo Senha com o valor "Pass123123*" na tela de Login do App
+    E clico no botão Entrar na tela de Login do App
+    E clico no botão Agora não no dialogo do FaceID na tela de Login do App
+    E preencho o campo Código com o valor "576439" na tela de Autorização do App
+    E clico no botão Entrar na tela de Login do App na tela de Autorização do App
+    E que estou na tela de Home do App
+    E clico em Próximo no dialogo de Acesso de localização do App
+    E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
+    E clico no botão Transferir na tela de Home do App
+    E clico no botão TED na tela de Home do App
+    E preencho o campo Pesquisar usuários com o valor "Lucas Ricardo Graeff" na tela de Transferir do App
+    E clico na conta filtrada com a descrição "Lucas Ricardo Graeff, BANCO COOPERATIVO SICREDI S.A. • 50592-748, 037.335.950-09" na tela de Transferir do App
+    E preencho o campo valor com "150" na tela de Transferir do App
+    E clico no botão Continuar na tela de Transferir do App
+    E clico no botão Confirmar na tela de Transferir do App
+    E clico no botão Continuar na tela de Transferir do App
+    E digito o PIN "112233" na tela de preenchimento do PIN do App
+    Então a mensagem "Você atingiu o seu limite por período, ou o limite por transação é mais baixo que o valor desejado" deve ser exibida na tela de Home do App
+
+  Cenário: Transação de TED com limite não excedido no aplicativo
+    Dado que estou na tela Home do Backoffice
+    Quando clico no botão para mostrar os Filtros avançados
+    E preencho o campo CPF ou CNPJ com o valor "17698030091" nos Filtros avançados
+    E clico no botão Filtrar nos Filtros avançados
+    E clico no botão para visualizar o registro filtrado
+    E clico no botão Limites transacionais na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "DIURNO", "PERÍODO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999999" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "DIURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "500" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "NOTURNO", "PERÍODO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999999" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E clico no botão Editar na linha que contém os valores "TED", "NOTURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "500" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
+    E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
+    E encerro o navegador web
+    E acesso o Aplicativo
+    E clico em Permitir no dialogo de notificações do Android
+    E clico no botão Entrar na tela Inicial do App
+    E preencho o campo CPF com o valor "cabrito" na tela de Login do App
+    E clico no botão Continuar na tela de Login do App
+    E preencho o campo Senha com o valor "Pass123123*" na tela de Login do App
+    E clico no botão Entrar na tela de Login do App
+    E clico no botão Agora não no dialogo do FaceID na tela de Login do App
+    E preencho o campo Código com o valor "576439" na tela de Autorização do App
+    E clico no botão Entrar na tela de Login do App na tela de Autorização do App
+    E que estou na tela de Home do App
+    E clico em Próximo no dialogo de Acesso de localização do App
+    E clico no botão Permitir enquanto estiver usando o App no dialogo de localização do Android
+    E clico no botão Transferir na tela de Home do App
+    E clico no botão TED na tela de Home do App
+    E preencho o campo Pesquisar usuários com o valor "Lucas Ricardo Graeff" na tela de Transferir do App
+    E clico na conta filtrada com a descrição "Lucas Ricardo Graeff, BANCO COOPERATIVO SICREDI S.A. • 50592-748, 037.335.950-09" na tela de Transferir do App
+    E preencho o campo valor com "200" na tela de Transferir do App
+    E clico no botão Continuar na tela de Transferir do App
+    E clico no botão Confirmar na tela de Transferir do App
+    E clico no botão Continuar na tela de Transferir do App
+    E digito o PIN "112233" na tela de preenchimento do PIN do App
+    E clico no botão Ver Comprovante na tela de Tranferência confirmada do App
