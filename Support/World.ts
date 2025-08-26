@@ -9,6 +9,8 @@ export class World extends CucumberWorld {
   public mobileDriver: Browser | null = null;
   public activeDriver: WebDriver | Browser | null = null;
 
+  storedValues: Map<string, string> = new Map();
+
   constructor(options: IWorldOptions) {
     super(options);
     this.driver = null!;

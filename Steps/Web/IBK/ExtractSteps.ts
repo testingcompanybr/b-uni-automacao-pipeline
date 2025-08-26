@@ -24,6 +24,26 @@ Then('a última movimentação deve ser transação de PIX para {string} no valo
 });
 
 When('clico na última movimentação para abrir o comprovante na tela de Extrato', async function (this: World) {
-  const extractActions = new ExtractActions(this.driver as WebDriver);
+  const extractActions = new ExtractActions(this.driver as WebDriver, this);
   await extractActions.clickFirstTransaction();
+});
+
+When('armazeno o saldo do dia', async function (this: World) {
+  const extractActions = new ExtractActions(this.driver as WebDriver, this);
+  await extractActions.storeDailyBalance();
+});
+
+Then('o saldo do dia deve estar diferente de anteriormente', async function (this: World) {
+  const extractActions = new ExtractActions(this.driver as WebDriver, this);
+  const saved_balance = extractActions.getStoredValue('dailyBalance');
+
+  const actual_balance_element = await (this.driver as WebDriver).findElement(ExtractElementsMap.txtDailyBalance);
+  const actual_balance_value = await actual_balance_element.getText();
+
+  expect(actual_balance_value).to.not.equal(saved_balance, 'O saldo não deveria ser igual ao armazenado');
+});
+
+When('clico no botão de Início no menu lateral na tela de Extrato', async function (this: World) {
+  const extractActions = new ExtractActions(this.driver as WebDriver, this);
+  await extractActions.clickHomeBtnMenu();
 });

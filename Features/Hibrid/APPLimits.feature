@@ -1,4 +1,4 @@
-language: pt
+# language: pt
 @hibrid @mobileLimites
 Funcionalidade: Limites aplicativo
 
@@ -203,3 +203,4 @@ Funcionalidade: Limites aplicativo
     E clico no botão Continuar na tela de Transferir do App
     E digito o PIN "112233" na tela de preenchimento do PIN do App
     E clico no botão Ver Comprovante na tela de Tranferência confirmada do App
+    Então a tela de Comprovante do App deve ser exibida
