@@ -9,6 +9,7 @@ export class TransferActions {
     const input = await this.driver.$(bySelector(TransferElementsMap.inputSearchForUsers));
     await input.click();
     await input.addValue(username);
+    await this.driver.hideKeyboard();
   }
 
   async clickFilteredUser(description: string) {
@@ -21,6 +22,7 @@ export class TransferActions {
     const input = await this.driver.$(bySelector(TransferElementsMap.inputTEDValue));
     await input.click();
     await input.addValue(TEDValue);
+    await this.driver.hideKeyboard();
   }
 
   async clickBtnContinue() {

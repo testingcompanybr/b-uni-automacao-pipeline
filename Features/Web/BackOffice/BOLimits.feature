@@ -21,7 +21,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "BOLETO", "DIURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "5000" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "2000" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "BOLETO", "NOTURNO", "PERÍODO" na tela de Detalhes da Conta
@@ -29,7 +29,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "BOLETO", "NOTURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "5000" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "2000" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E vou para a página de Login do IBK
@@ -59,7 +59,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "BOLETO", "DIURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "500000" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999990" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "BOLETO", "NOTURNO", "PERÍODO" na tela de Detalhes da Conta
@@ -67,7 +67,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "BOLETO", "NOTURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "500000" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999990" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E vou para a página de Login do IBK
@@ -151,7 +151,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "PIX", "DIURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "500" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999990" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "PIX", "NOTURNO", "PERÍODO" na tela de Detalhes da Conta
@@ -159,7 +159,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "PIX", "NOTURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "500" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999990" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E vou para a página de Login do IBK
@@ -245,7 +245,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "TED", "DIURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "500" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999990" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "TED", "NOTURNO", "PERÍODO" na tela de Detalhes da Conta
@@ -253,7 +253,7 @@ Funcionalidade: BackOffice Limites
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E clico no botão Editar na linha que contém os valores "TED", "NOTURNO", "TRANSAÇÃO" na tela de Detalhes da Conta
-    E preencho campo Novo limite com o valor "500" na janela Edição de limite de conta na tela de Detalhes da Conta
+    E preencho campo Novo limite com o valor "999999990" na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar na janela Edição de limite de conta na tela de Detalhes da Conta
     E clico no botão Confirmar no dialogo Confirmação de alteração de limite de conta na tela de Detalhes da Conta
     E vou para a página de Login do IBK

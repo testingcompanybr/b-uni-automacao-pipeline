@@ -19,6 +19,7 @@ export class PixActions {
     const input = await this.driver.$(bySelector(PixElementsMap.inputSearchForUsers));
     await input.click();
     await input.addValue(username);
+    await this.driver.hideKeyboard();
   }
 
   async clickFilteredUser(description: string) {
@@ -31,6 +32,7 @@ export class PixActions {
     const input = await this.driver.$(bySelector(PixElementsMap.inputPixValue));
     await input.click();
     await input.addValue(pixValue);
+    await this.driver.hideKeyboard();
   }
 
   async clickBtnContinue() {

@@ -10,6 +10,7 @@ export class LoginCredencialsActions {
     await input.click();
     await input.clearValue();
     await input.addValue(cpf);
+    await this.driver.hideKeyboard();
   }
 
   async clickContinueButton() {
@@ -21,6 +22,7 @@ export class LoginCredencialsActions {
     const input = await this.driver.$(bySelector(LoginCredencialsElementsMap.inputPassword));
     await input.click();
     await input.addValue(password);
+    await this.driver.hideKeyboard();
   }
 
   async clickEnterButton() {

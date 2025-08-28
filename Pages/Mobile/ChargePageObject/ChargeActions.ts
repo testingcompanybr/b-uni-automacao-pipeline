@@ -14,12 +14,14 @@ export class ChargeActions {
     const input = await this.driver.$(bySelector(ChargeElementsMaps.inputPixValue));
     await input.click();
     await input.addValue(pixValue);
+    await this.driver.hideKeyboard();
   }
 
   async fillIdentifier(identifier: string) {
     const input = await this.driver.$(bySelector(ChargeElementsMaps.inputIdentifier));
     await input.click();
     await input.addValue(identifier);
+    await this.driver.hideKeyboard();
   }
 
   async clickBtnCreateQRcode() {

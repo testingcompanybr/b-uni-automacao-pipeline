@@ -14,6 +14,7 @@ export class PayBillActions {
     const input = await this.driver.$(bySelector(PayBillElementsMap.inputCodeBar));
     await input.click();
     await input.addValue(billetCodeValue);
+    await this.driver.hideKeyboard();
   }
 
   async clickBtnConfirm() {
@@ -39,6 +40,7 @@ export class PayBillActions {
     await input.click();
     await input.clearValue();
     await input.addValue(billetValue);
+    await this.driver.hideKeyboard();
   }
 
 }

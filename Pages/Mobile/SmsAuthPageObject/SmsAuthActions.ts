@@ -9,6 +9,7 @@ export class SmsAuthActions {
     const input = await this.driver.$(bySelector(SmsAuthElementsMap.inputSMSCode));
     await input.click();
     await input.addValue(smsCode);
+    await this.driver.hideKeyboard();
   }
 
   async clickEnterButton() {

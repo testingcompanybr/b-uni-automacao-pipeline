@@ -151,3 +151,25 @@ export async function waitFor(driver: WebDriver, condition: WaitCondition, timeo
       throw new Error(`Tipo de espera não suportado: ${(condition as any).type}`);
   }
 }
+
+export async function waitForLoadingToDisappear(driver: WebDriver, timeout = 30000): Promise<boolean> {
+  try {
+    const loadingLocator = By.css('.loading, .spinner, .loader');
+
+    // Espera até o elemento aparecer (caso o loading esteja presente)
+    await driver.wait(until.elementLocated(loadingLocator), 3000).catch(() => null);
+
+    // Se apareceu, aguarda até sumir
+    await driver.wait(async () => {
+      const elements = await driver.findElements(loadingLocator);
+      if (elements.length === 0) return true;
+
+      const isDisplayed = await elements[0].isDisplayed().catch(() => false);
+      return !isDisplayed;
+    }, timeout, `O loading não desapareceu dentro de ${timeout}ms`);
+
+    return true;
+  } catch (error) {
+    return true;
+  }
+}

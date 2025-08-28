@@ -1,6 +1,7 @@
 import { WebDriver, WebElement, By, until } from 'selenium-webdriver';
 import { ExtractElementsMap } from './ExtractElementsMap';
 import { World } from '../../../../Support/World';
+import { waitForLoadingToDisappear } from '../../../../Support/Utils';
 
 export class ExtractActions {constructor(private driver: WebDriver, private world: World) {}
 
@@ -25,8 +26,10 @@ getStoredValue(key: string): string | undefined {
 }
 
 async clickHomeBtnMenu(): Promise<void> {
-    const homeBtnMenu: WebElement = await this.waitForElement(ExtractElementsMap.btnHomeMenu);
-    await homeBtnMenu.click();
+  await waitForLoadingToDisappear(this.driver);
+
+  const homeBtnMenu: WebElement = await this.waitForElement(ExtractElementsMap.btnHomeMenu);
+  await homeBtnMenu.click();
 }
 
 }

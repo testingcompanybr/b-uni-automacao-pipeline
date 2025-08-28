@@ -1,5 +1,6 @@
 import { WebDriver, WebElement, By, until } from 'selenium-webdriver';
 import { HomeElementsMap } from './HomeElementsMap';
+import { waitForLoadingToDisappear } from '../../../../Support/Utils';
 
 export class HomeActions {constructor(private driver: WebDriver) {}
 
@@ -13,6 +14,8 @@ async clickBtnAccountBalanceEye(): Promise<void> {
 }
 
 async clickBtnExtract(): Promise<void> {
+    await waitForLoadingToDisappear(this.driver);
+
     const btnExtract: WebElement = await this.waitForElement(HomeElementsMap.btnExtract);
     await btnExtract.click();
 }

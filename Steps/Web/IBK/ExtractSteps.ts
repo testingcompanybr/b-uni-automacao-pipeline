@@ -4,7 +4,7 @@ import { ExtractElementsMap } from '../../../Pages/Web/IBK/ExtractPageObject/Ext
 import { ExtractActions } from '../../../Pages/Web/IBK/ExtractPageObject/ExtractActions';
 import { World } from '../../../Support/World';
 import { WebDriver } from 'selenium-webdriver';
-import { sleep, waitFor } from '../../../Support/Utils';
+import { sleep, waitFor, waitForLoadingToDisappear } from '../../../Support/Utils';
 
 Then('verifico que estou na tela de Extrato', async function (this: World) {
   const driver = this.driver as WebDriver;
@@ -34,6 +34,8 @@ When('armazeno o saldo do dia', async function (this: World) {
 });
 
 Then('o saldo do dia deve estar diferente de anteriormente', async function (this: World) {
+  await waitForLoadingToDisappear(this.driver as WebDriver);
+
   const extractActions = new ExtractActions(this.driver as WebDriver, this);
   const saved_balance = extractActions.getStoredValue('dailyBalance');
 

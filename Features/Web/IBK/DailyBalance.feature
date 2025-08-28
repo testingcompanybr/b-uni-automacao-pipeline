@@ -22,3 +22,6 @@ Funcionalidade: Saldo Diário
     E clico no botão Avançar na tela de Pagar na etapa de Detalhes do pagamento
     E digito o PIN "112233" no pop-up Digite o seu PIN na tela de Pagar na etapa de Detalhes do pagamento
     E clico no botão Confirmar no pop-up Digite o seu PIN na tela de Pagar na etapa de Detalhes do pagamento
+    E clico no botão de Início no menu lateral na tela de Extrato
+    E clico no botão de Ver Extrato na tela de Home
+    Então o saldo do dia deve estar diferente de anteriormente
