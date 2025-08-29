@@ -3,9 +3,6 @@ import { World } from '../../Support/World';
 import { AndroidDialogActions } from '../../Pages/Mobile/AndroidDialogPageObject/AndroidDialogActions';
 
 Given('clico em Permitir no dialogo de notificações do Android', async function (this: World) {
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(2500);
-
   const androidDialogActions = new AndroidDialogActions(this.mobileDriver!);
   await androidDialogActions.clickAllowNotificationButton();
 });

@@ -11,9 +11,6 @@ When('preencho o campo CPF com o valor aleatório na tela de Cadastrar do App', 
 When('clico no botão Continuar na tela de Cadastrar do App', async function (this: World) {
   const accountOpeningActions = new AccountOpeningActions(this.mobileDriver!);
   await accountOpeningActions.clickContinueButton();
-
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(1500);
 });
 
 When('preencho o campo Email com o valor {string} na tela de Cadastrar do App', async function (this: World, email: string) {
@@ -64,9 +61,6 @@ When('preencho o campo Senha de acesso com o valor {string} na tela de Cadastrar
 When('preencho o campo CEP com o valor {string} na tela de Cadastrar do App', async function (this: World, cep: string) {
   const accountOpeningActions = new AccountOpeningActions(this.mobileDriver!);
   await accountOpeningActions.fillCEP(cep);
-
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(5000);
 });
 
 When('preencho o campo Número com o valor {string} na tela de Cadastrar do App', async function (this: World, number: string) {
@@ -88,9 +82,6 @@ When('clico no botão Iniciar Identificação na tela de Identificação do App'
 When('clico no botão Continuar na tela de Cadastrar Pessoa Juridica do App', async function (this: World) {
   const accountOpeningActions = new AccountOpeningActions(this.mobileDriver!);
   await accountOpeningActions.clickContinueButton();
-
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(1500);
 });
 
 When('preencho o campo CNPJ com o valor aleatório na tela de Cadastrar Pessoa Juridica do App', async function (this: World) {

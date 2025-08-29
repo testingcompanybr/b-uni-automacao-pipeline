@@ -5,7 +5,4 @@ import { PixInstructionsActions } from '../../Pages/Mobile/PixInstructionsPageOb
 When('clico no botão Próximo na tela de instruções do Pix do App', async function (this: World) {
   const pixInstructionsActions = new PixInstructionsActions(this.mobileDriver!);
   await pixInstructionsActions.clickBtnNext();
-  
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(1000);
 });

@@ -15,7 +15,4 @@ When('seleciono o tipo de conta Pessoa Juridica na tela de Tipo de Conta do App'
 When('clico no botão Continuar na tela de Tipo de Conta do App', async function (this: World) {
   const accountTypeActions = new AccountTypeActions(this.mobileDriver!);
   await accountTypeActions.clickContinueBtn();
-
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(1500);
 });

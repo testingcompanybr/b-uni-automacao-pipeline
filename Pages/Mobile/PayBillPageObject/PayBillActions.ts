@@ -7,11 +7,13 @@ export class PayBillActions {
 
   async clickBtnContinue() {
     const btn = await this.driver.$(bySelector(PayBillElementsMap.btnContinue));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 
   async fillBilletCodeValue(billetCodeValue: string) {
     const input = await this.driver.$(bySelector(PayBillElementsMap.inputCodeBar));
+    await input.waitForDisplayed({ timeout: 10000 });
     await input.click();
     await input.addValue(billetCodeValue);
     await this.driver.hideKeyboard();
@@ -19,12 +21,14 @@ export class PayBillActions {
 
   async clickBtnConfirm() {
     const btn = await this.driver.$(bySelector(PayBillElementsMap.btnConfirm));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 
   async fillPINCode(pinCode: string) {
     for(const digit of pinCode) {
         const btn = await this.driver.$(bySelector(PayBillElementsMap.keyboardPIN(digit)));
+        await btn.waitForDisplayed({ timeout: 10000 });
         await btn.click();
         await this.driver.pause(500);
     }
@@ -32,11 +36,13 @@ export class PayBillActions {
 
   async clickBtnShowTransactionProof() {
     const btn = await this.driver.$(bySelector(PayBillElementsMap.btnShowTransactionProof));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 
   async fillBilletValue(billetValue: string) {
     const input = await this.driver.$(bySelector(PayBillElementsMap.inputValue));
+    await input.waitForDisplayed({ timeout: 10000 });
     await input.click();
     await input.clearValue();
     await input.addValue(billetValue);

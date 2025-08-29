@@ -30,7 +30,4 @@ When('clico no botão Confirmar na tela de Transferir do App', async function (t
 When('clico no botão Ver Comprovante na tela de Tranferência confirmada do App', async function (this: World) {
   const transferActions = new TransferActions(this.mobileDriver!);
   await transferActions.clickBtnShowTransactionProof();
-  
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(5000);
 });

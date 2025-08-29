@@ -5,9 +5,6 @@ import { PixCopyPasteActions } from '../../Pages/Mobile/PixCopyPastePageObject/P
 When('clico no botão Colar na tela de Copia e cola do App', async function (this: World) {
   const pixCopyPasteActions = new PixCopyPasteActions(this.mobileDriver!);
   await pixCopyPasteActions.clickBtnPaste();
-  
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(1000);
 });
 
 When('clico no botão Continuar na tela de Copia e cola do App', async function (this: World) {

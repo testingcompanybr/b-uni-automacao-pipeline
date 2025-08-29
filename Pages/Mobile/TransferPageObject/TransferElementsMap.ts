@@ -1,5 +1,5 @@
 export const TransferElementsMap = {
-  inputSearchForUsers: 'android=new UiSelector().text("pesquisar usuários")',
+  inputSearchForUsers: 'android=new UiSelector().text("Pesquisar")',
   filteredUser: (description: string) => `android=new UiSelector().description("${description}")`,
   inputTEDValue: 'android=new UiSelector().className("android.widget.EditText")',
   btnContinue: "accessibility id:CONTINUAR",

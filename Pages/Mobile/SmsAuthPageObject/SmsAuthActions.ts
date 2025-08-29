@@ -7,6 +7,7 @@ export class SmsAuthActions {
 
   async fillSMSCode(smsCode: string) {
     const input = await this.driver.$(bySelector(SmsAuthElementsMap.inputSMSCode));
+    await input.waitForDisplayed({ timeout: 10000 });
     await input.click();
     await input.addValue(smsCode);
     await this.driver.hideKeyboard();
@@ -14,6 +15,7 @@ export class SmsAuthActions {
 
   async clickEnterButton() {
     const btn = await this.driver.$(bySelector(SmsAuthElementsMap.btnEnter));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 }

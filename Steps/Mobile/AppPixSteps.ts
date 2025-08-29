@@ -43,22 +43,17 @@ When('clico no botão Confirmar na tela de Confirmação de Pix do App', async f
 When('digito o PIN {string} na tela de preenchimento do PIN do App', async function (this: World, pinCode: string) {
   const pixActions = new PixActions(this.mobileDriver!);
   await pixActions.fillPINCode(pinCode);
-
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(15000);
 });
 
 When('clico no botão Ver Comprovante na tela de Pix Confirmado do App', async function (this: World) {
   const pixActions = new PixActions(this.mobileDriver!);
   await pixActions.clickBtnShowTransactionProof();
-  
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(5000);
 });
 
 Then('deve haver uma chave {string} cadastrada na tela de Pix do App', async function (this: World, keyType: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PixElementsMap.txtKeyTypeByKeyType(keyType)));
+  await element.waitForDisplayed({ timeout: 10000 });
   const value = await element.getText();
   expect(value).to.equal(keyType);
 });
@@ -85,14 +80,12 @@ Then('clico no botão de 3 pontos da chave pix na tela de Pix do App', async fun
 Then('clico no botão Apagar chave Pix na tela de Pix do App', async function (this: World) {
   const pixActions = new PixActions(this.mobileDriver!);
   await pixActions.clickBtnDeletePixKey();
-
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(5000);
 });
 
 Then('a chave {string} deve ter sido excluida na tela de Pix do App', async function (this: World, keyType: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PixElementsMap.txtKeyTypeByKeyType(keyType)));
+  await element.waitForDisplayed({ timeout: 10000 });
   const isExisting = await element.isExisting();
   expect(isExisting).to.be.false;
 });

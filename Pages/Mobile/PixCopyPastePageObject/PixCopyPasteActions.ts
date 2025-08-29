@@ -7,11 +7,13 @@ export class PixCopyPasteActions {
 
   async clickBtnPaste() {
     const btn = await this.driver.$(bySelector(PixCopyPasteElementsMap.btnPaste));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 
   async clickBtnContinue() {
     const btn = await this.driver.$(bySelector(PixCopyPasteElementsMap.btnContinue));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 

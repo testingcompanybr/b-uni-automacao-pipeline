@@ -6,7 +6,8 @@ export class LocationDialogActions {
   constructor(private driver: Browser) {}
 
   async clickNextButton() {
-      const btn = await this.driver.$(bySelector(LocationDialogElementsMap.btnNext));
-      await btn.click();
+    const btn = await this.driver.$(bySelector(LocationDialogElementsMap.btnNext));
+    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.click();
   }
 }

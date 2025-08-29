@@ -7,9 +7,13 @@ export class ProfileActions {
   constructor(private driver: Browser) {}
 
   async clickExitButton() {
+    const profilebtn = await this.driver.$(bySelector(ProfileElementsMap.btnProfile));
+    await profilebtn.waitForDisplayed({ timeout: 10000 });
+    
     await swipeUp(this.driver);
 
     const btn = await this.driver.$(bySelector(ProfileElementsMap.btnExit));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 

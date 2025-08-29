@@ -7,7 +7,7 @@ export class LoginCredencialsActions {
 
   async fillCPF(cpf: string) {
     const input = await this.driver.$(bySelector(LoginCredencialsElementsMap.inputCPF));
-    await input.click();
+    await input.waitForDisplayed({ timeout: 10000 });
     await input.clearValue();
     await input.addValue(cpf);
     await this.driver.hideKeyboard();
@@ -15,23 +15,26 @@ export class LoginCredencialsActions {
 
   async clickContinueButton() {
     const btn = await this.driver.$(bySelector(LoginCredencialsElementsMap.btnContinue));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 
   async fillPassword(password: string) {
     const input = await this.driver.$(bySelector(LoginCredencialsElementsMap.inputPassword));
-    await input.click();
+    await input.waitForDisplayed({ timeout: 10000 });
     await input.addValue(password);
     await this.driver.hideKeyboard();
   }
 
   async clickEnterButton() {
     const btn = await this.driver.$(bySelector(LoginCredencialsElementsMap.btnEnter));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 
   async clickNotNowFaceIDButton() {
     const btn = await this.driver.$(bySelector(LoginCredencialsElementsMap.btnNotNowFaceID));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 }

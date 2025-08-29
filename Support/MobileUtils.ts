@@ -25,3 +25,21 @@ export async function swipeUp(driver: Browser, duration = 800) {
 export async function pressAndroidBackButton(driver: Browser) {
   await driver.back();
 }
+
+export async function waitAndClick(driver: Browser, selector: string, timeout = 10000) {
+  const element = await driver.$(selector);
+  await element.waitForDisplayed({ timeout });
+  await element.click();
+}
+
+export async function waitAndSetValue(driver: Browser, selector: string, value: string, timeout = 10000) {
+  const element = await driver.$(selector);
+  await element.waitForDisplayed({ timeout });
+  await element.setValue(value);
+}
+
+export async function waitForElement(driver: Browser, selector: string, timeout = 10000): Promise<WebdriverIO.Element> {
+  const element = await driver.$(selector);
+  await element.waitForDisplayed({ timeout });
+  return element;
+}

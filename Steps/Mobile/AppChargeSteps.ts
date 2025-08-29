@@ -16,8 +16,6 @@ When('clico no botão Continuar na tela de Cobrar do App', async function (this:
 When('preencho o campo Identificador com {string} na tela de Cobrar do App', async function (this: World, identifier: string) {
   const chargeActions = new ChargeActions(this.mobileDriver!);
   await chargeActions.fillIdentifier(identifier);
-  const mobileDriver = this.mobileDriver!;
-  await mobileDriver.pause(1500);
 });
 
 When('clico no botão Criar QRcode na tela de Cobrar do App', async function (this: World) {

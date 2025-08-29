@@ -1,4 +1,4 @@
-# language: pt
+language: pt
 @hibrid @mobileLimites
 Funcionalidade: Limites aplicativo
 
@@ -11,7 +11,7 @@ Funcionalidade: Limites aplicativo
 
   Cenário: Transação de boleto com limite excedido no aplicativo
     Dado que estou na tela Home do Backoffice
-    Quando clico no botão para mostrar os Filtros avançados
+    Quando clico no botão para mostrar os Filtros avançadosl
     E preencho o campo CPF ou CNPJ com o valor "17698030091" nos Filtros avançados
     E clico no botão Filtrar nos Filtros avançados
     E clico no botão para visualizar o registro filtrado
@@ -148,7 +148,7 @@ Funcionalidade: Limites aplicativo
     E clico no botão Transferir na tela de Home do App
     E clico no botão TED na tela de Home do App
     E preencho o campo Pesquisar usuários com o valor "Lucas Ricardo Graeff" na tela de Transferir do App
-    E clico na conta filtrada com a descrição "Lucas Ricardo Graeff, BANCO COOPERATIVO SICREDI S.A. • 50592-748, 037.335.950-09" na tela de Transferir do App
+    E clico na conta filtrada com a descrição ", Lucas Ricardo Graeff, BANCO COOPERATIVO SICREDI S.A. • 50592-748, 037.335.950-09" na tela de Transferir do App
     E preencho o campo valor com "150" na tela de Transferir do App
     E clico no botão Continuar na tela de Transferir do App
     E clico no botão Confirmar na tela de Transferir do App
@@ -196,7 +196,7 @@ Funcionalidade: Limites aplicativo
     E clico no botão Transferir na tela de Home do App
     E clico no botão TED na tela de Home do App
     E preencho o campo Pesquisar usuários com o valor "Lucas Ricardo Graeff" na tela de Transferir do App
-    E clico na conta filtrada com a descrição "Lucas Ricardo Graeff, BANCO COOPERATIVO SICREDI S.A. • 50592-748, 037.335.950-09" na tela de Transferir do App
+    E clico na conta filtrada com a descrição ", Lucas Ricardo Graeff, BANCO COOPERATIVO SICREDI S.A. • 50592-748, 037.335.950-09" na tela de Transferir do App
     E preencho o campo valor com "200" na tela de Transferir do App
     E clico no botão Continuar na tela de Transferir do App
     E clico no botão Confirmar na tela de Transferir do App

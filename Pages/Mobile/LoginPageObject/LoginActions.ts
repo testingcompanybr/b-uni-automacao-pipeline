@@ -7,11 +7,13 @@ export class LoginActions {
 
   async clickEnterButton() {
     const btn = await this.driver.$(bySelector(LoginElementsMap.btnEnter));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 
   async clickCreateAccountButton() {
     const btn = await this.driver.$(bySelector(LoginElementsMap.btnCreateAccount));
+    await btn.waitForDisplayed({ timeout: 10000 });
     await btn.click();
   }
 }
