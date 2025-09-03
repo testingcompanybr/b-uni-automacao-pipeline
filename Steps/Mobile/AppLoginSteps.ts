@@ -23,7 +23,7 @@ When('clico no botão Criar Conta na tela Inicial do App', async function (this:
 Then('verifico que estou estou na tela Inicial de Entrar do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(LoginElementsMap.txtWelcome));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;

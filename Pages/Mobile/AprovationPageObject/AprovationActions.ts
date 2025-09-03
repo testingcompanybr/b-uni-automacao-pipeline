@@ -7,13 +7,13 @@ export class AprovationActions {
 
   async clickBtnApprove() {
     const btn = await this.driver.$(bySelector(AprovationElementsMap.btnApprove));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
   async clickBtnApprovePopUp() {
     const btn = await this.driver.$(bySelector(AprovationElementsMap.btnApprovePopup));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 

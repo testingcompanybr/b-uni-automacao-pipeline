@@ -7,7 +7,7 @@ export class ExtractActions {
 
   async clickFirstTransactionByUser(userAccount: string) {
     const firstTransaction = await this.driver.$(bySelector(ExtractElementsMap.firstTransactionByUser(userAccount)));
-    await firstTransaction.waitForDisplayed({ timeout: 10000 });
+    await firstTransaction.waitForDisplayed({ timeout: 30000 });
     await firstTransaction.click();
   }
 

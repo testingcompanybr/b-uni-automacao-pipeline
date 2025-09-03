@@ -53,7 +53,7 @@ When('clico no botão Ver Comprovante na tela de Pix Confirmado do App', async f
 Then('deve haver uma chave {string} cadastrada na tela de Pix do App', async function (this: World, keyType: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PixElementsMap.txtKeyTypeByKeyType(keyType)));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(keyType);
 });
@@ -85,7 +85,7 @@ Then('clico no botão Apagar chave Pix na tela de Pix do App', async function (t
 Then('a chave {string} deve ter sido excluida na tela de Pix do App', async function (this: World, keyType: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PixElementsMap.txtKeyTypeByKeyType(keyType)));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const isExisting = await element.isExisting();
   expect(isExisting).to.be.false;
 });

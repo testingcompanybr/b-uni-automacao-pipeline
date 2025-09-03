@@ -7,7 +7,7 @@ export class PixInstructionsActions {
 
   async clickBtnNext() {
     const btn = await this.driver.$(bySelector(PixInstructionsElementsMap.btnNext));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 }

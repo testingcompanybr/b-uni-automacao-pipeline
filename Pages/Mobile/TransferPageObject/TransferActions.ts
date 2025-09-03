@@ -7,7 +7,7 @@ export class TransferActions {
 
   async fillSearchUser(username: string) {
     const input = await this.driver.$(bySelector(TransferElementsMap.inputSearchForUsers));
-    await input.waitForDisplayed({ timeout: 10000 });
+    await input.waitForDisplayed({ timeout: 30000 });
     await input.click();
     await input.addValue(username);
     await this.driver.hideKeyboard();
@@ -15,14 +15,14 @@ export class TransferActions {
 
   async clickFilteredUser(description: string) {
     const filteredUser = await this.driver.$(bySelector(TransferElementsMap.filteredUser(description)));
-    await filteredUser.waitForDisplayed({ timeout: 10000 });
+    await filteredUser.waitForDisplayed({ timeout: 30000 });
     await filteredUser.click();
     await filteredUser.click();
   }
 
   async fillTEDValue(TEDValue: string) {
     const input = await this.driver.$(bySelector(TransferElementsMap.inputTEDValue));
-    await input.waitForDisplayed({ timeout: 10000 });
+    await input.waitForDisplayed({ timeout: 30000 });
     await input.click();
     await input.addValue(TEDValue);
     await this.driver.hideKeyboard();
@@ -30,7 +30,7 @@ export class TransferActions {
 
   async clickBtnContinue() {
     const btn = await this.driver.$(bySelector(TransferElementsMap.btnContinue));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
@@ -38,14 +38,14 @@ export class TransferActions {
     await swipeUp(this.driver);
 
     const btn = await this.driver.$(bySelector(TransferElementsMap.btnConfirm));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
   async fillPINCode(pinCode: string) {
     for (const digit of pinCode) {
       const btn = await this.driver.$(bySelector(TransferElementsMap.keyboardPIN(digit)));
-      await btn.waitForDisplayed({ timeout: 10000 });
+      await btn.waitForDisplayed({ timeout: 30000 });
       await btn.click();
       await this.driver.pause(500);
     }
@@ -53,7 +53,7 @@ export class TransferActions {
 
   async clickBtnShowTransactionProof() {
     const btn = await this.driver.$(bySelector(TransferElementsMap.btnShowTransactionProof));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 }

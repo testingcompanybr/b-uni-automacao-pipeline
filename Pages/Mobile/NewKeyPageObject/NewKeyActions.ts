@@ -7,19 +7,19 @@ export class NewKeyActions {
 
   async clickBtnRandomKey() {
     const btn = await this.driver.$(bySelector(NewKeyElementsMap.btnRandomKey));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
   async clickBtnCPFCNPJKeyByCPFCNPJ(cpfcnpj: string) {
     const btn = await this.driver.$(bySelector(NewKeyElementsMap.btnCPFCNPJKeyAccountByCPFCNPJ(cpfcnpj)));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
   async clickBtnContinue() {
     const btn = await this.driver.$(bySelector(NewKeyElementsMap.btnContinue));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 }

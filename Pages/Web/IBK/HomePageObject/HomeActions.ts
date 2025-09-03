@@ -60,4 +60,11 @@ async clickBtnPIX(): Promise<void> {
     await btnSeePIX.click();
 }
 
+async clickBtnMyAccount(): Promise<void> {
+    await waitForLoadingToDisappear(this.driver);
+
+    const btnMyAccount: WebElement = await this.waitForElement(HomeElementsMap.btnMyAccount);
+    await btnMyAccount.click();
+}
+
 }

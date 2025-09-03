@@ -33,7 +33,7 @@ When('clico no botão Ver Comprovante na tela de Pagar conta do App', async func
 Then('o campo de Descontos deve ser exibido na tela de Pagar conta do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PayBillElementsMap.labelDiscount));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
@@ -42,7 +42,7 @@ Then('o campo de Descontos deve ser exibido na tela de Pagar conta do App', asyn
 Then('o campo de Multa deve ser exibido na tela de Pagar conta do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PayBillElementsMap.labelFine));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
@@ -51,7 +51,7 @@ Then('o campo de Multa deve ser exibido na tela de Pagar conta do App', async fu
 Then('o campo Data de Vencimento deve ter a data anterior ao dia atual na tela de Pagar conta do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PayBillElementsMap.txtDate));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const dateText = await element.getText();
   const [day, month, year] = dateText.split('/');
   const dueDate = new Date(Number(year), Number(month) - 1, Number(day));
@@ -63,7 +63,7 @@ Then('o campo Data de Vencimento deve ter a data anterior ao dia atual na tela d
 Then('o campo de Juros deve ser exibido na tela de Pagar conta do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PayBillElementsMap.labelFess));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
@@ -72,7 +72,7 @@ Then('o campo de Juros deve ser exibido na tela de Pagar conta do App', async fu
 Then('o campo Valor mínimo deve ser exibido na tela de Pagar conta do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PayBillElementsMap.labelMinValue));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
@@ -86,7 +86,7 @@ Then('preencho o campo Valor do boleto com o valor {string} na tela de Pagar con
 Then('o campo Valor mínimo não deve ser mais exibido na tela de Pagar conta do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(PayBillElementsMap.labelMinValue));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.false;

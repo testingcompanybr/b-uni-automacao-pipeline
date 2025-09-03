@@ -75,3 +75,8 @@ When('clico no botão de PIX na tela de Home', async function (this: World) {
   const homeActions = new HomeActions(this.driver as WebDriver);
   await homeActions.clickBtnPIX();
 });
+
+When('clico no botão de Minha conta na tela de Home', async function (this: World) {
+  const homeActions = new HomeActions(this.driver as WebDriver);
+  await homeActions.clickBtnMyAccount();
+});

@@ -15,4 +15,5 @@ export const HomeElementsMap = {
   btnAccountDetails: By.xpath("//span[@class='ant-typography' and text()='Detalhes da conta']"),
   btnCreditCard: By.xpath("//span[@class='ant-typography' and text()='Cartão de crédito']"),
   btnConsignatedCredit: By.xpath("//span[@class='ant-typography' and text()='Crédito consignado']"),
+  btnMyAccount: By.xpath("//span[@class='ant-typography' and text()='Minha conta']"),
 };

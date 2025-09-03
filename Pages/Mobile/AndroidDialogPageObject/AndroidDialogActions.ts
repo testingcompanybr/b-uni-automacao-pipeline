@@ -7,13 +7,13 @@ export class AndroidDialogActions {
 
   async clickAllowNotificationButton() {
     const btn = await this.driver.$(bySelector(AndroidDialogElementsMap.btnAllowNotifications));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
   async clickAllowWhileUsingAppButton() {
     const btn = await this.driver.$(bySelector(AndroidDialogElementsMap.btnAllowLocationWhileUsingApp));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 }

@@ -1,4 +1,4 @@
-language: pt
+# language: pt
 @hibrid @mobileLimites
 Funcionalidade: Limites aplicativo
 

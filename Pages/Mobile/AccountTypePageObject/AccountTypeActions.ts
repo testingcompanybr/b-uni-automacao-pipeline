@@ -7,19 +7,19 @@ export class AccountTypeActions {
 
   async clickPFBtn() {
     const btn = await this.driver.$(bySelector(AccountTypeElementsMap.buttonPF));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 3000 });
     await btn.click();
   }
 
   async clickPJBtn() {
     const btn = await this.driver.$(bySelector(AccountTypeElementsMap.buttonPJ));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 3000 });
     await btn.click();
   }
 
   async clickContinueBtn() {
     const btn = await this.driver.$(bySelector(AccountTypeElementsMap.btnContinue));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 3000 });
     await btn.click();
   }
 

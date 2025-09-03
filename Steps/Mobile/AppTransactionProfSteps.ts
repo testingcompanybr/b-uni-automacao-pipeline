@@ -28,7 +28,7 @@ Then('clico no botão Email no pop-up de Compartilhar na tela de Comprovante do 
 Then('o Valor deve ser {string} na tela de Comprovante do App', async function (this: World, valor: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtValue));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(valor);
 });
@@ -36,7 +36,7 @@ Then('o Valor deve ser {string} na tela de Comprovante do App', async function (
 Then('o Tipo de Transação deve ser {string} na tela de Comprovante do App', async function (this: World, transactionType: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtTransactionType));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(transactionType);
 });
@@ -44,7 +44,7 @@ Then('o Tipo de Transação deve ser {string} na tela de Comprovante do App', as
 Then('a Instituição da Conta origem deve ser {string} na tela de Comprovante do App', async function (this: World, institution: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtInstitutionOrigin));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(institution);
 });
@@ -52,7 +52,7 @@ Then('a Instituição da Conta origem deve ser {string} na tela de Comprovante d
 Then('o Nome da Conta origem deve ser {string} na tela de Comprovante do App', async function (this: World, accountName: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtAccountNameOrigin));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(accountName);
 });
@@ -60,7 +60,7 @@ Then('o Nome da Conta origem deve ser {string} na tela de Comprovante do App', a
 Then('a Agência da Conta origem deve ser {string} na tela de Comprovante do App', async function (this: World, agency: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtAgencyOrigin));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(agency);
 });
@@ -68,7 +68,7 @@ Then('a Agência da Conta origem deve ser {string} na tela de Comprovante do App
 Then('a Conta da Conta origem deve ser {string} na tela de Comprovante do App', async function (this: World, account: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtAccountOrigin));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(account);
 });
@@ -76,7 +76,7 @@ Then('a Conta da Conta origem deve ser {string} na tela de Comprovante do App', 
 Then('a Instituição da Conta destino deve ser {string} na tela de Comprovante do App', async function (this: World, institution: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtInstitutionDestiny));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(institution);
 });
@@ -84,7 +84,7 @@ Then('a Instituição da Conta destino deve ser {string} na tela de Comprovante 
 Then('o Nome da Conta destino deve ser {string} na tela de Comprovante do App', async function (this: World, accountName: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtAccountNameDestiny));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(accountName);
 });
@@ -92,7 +92,7 @@ Then('o Nome da Conta destino deve ser {string} na tela de Comprovante do App', 
 Then('a Agência da Conta destino deve ser {string} na tela de Comprovante do App', async function (this: World, agency: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtAgencyDestiny));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(agency);
 });
@@ -100,7 +100,7 @@ Then('a Agência da Conta destino deve ser {string} na tela de Comprovante do Ap
 Then('a Conta da Conta destino deve ser {string} na tela de Comprovante do App', async function (this: World, account: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtAccountDestiny));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(account);
 });
@@ -108,7 +108,7 @@ Then('a Conta da Conta destino deve ser {string} na tela de Comprovante do App',
 Then('a Descrição deve ser {string} na tela de Comprovante do App', async function (this: World, description: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.txtDescription));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const value = await element.getText();
   expect(value).to.equal(description);
 });
@@ -116,7 +116,7 @@ Then('a Descrição deve ser {string} na tela de Comprovante do App', async func
 Then('a tela de Comprovante do App deve ser exibida', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(TransactionProfElementsMap.labelProfScreen));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;

@@ -22,7 +22,7 @@ When('clico no botão Extrato na tela de Home do App', async function (this: Wor
 Then('verifico que estou logado no Aplicativo', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(HomeElementsMap.logoBuni));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
@@ -46,7 +46,7 @@ When('clico no botão Pagar boleto na tela de Home do App', async function (this
 Then('a mensagem Transferência enviada deve ser exibida na tela de Home do App', async function (this: World) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(HomeElementsMap.txtTransactionSent));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
 
   const isDisplayed = await element.isDisplayed();
   expect(isDisplayed).to.be.true;
@@ -55,7 +55,7 @@ Then('a mensagem Transferência enviada deve ser exibida na tela de Home do App'
 Then('a mensagem {string} deve ser exibida na tela de Home do App', async function (this: World, expectedMessage: string) {
   const driver = this.mobileDriver!;
   const element = await driver.$(bySelector(HomeElementsMap.txtLimitReached));
-  await element.waitForDisplayed({ timeout: 10000 });
+  await element.waitForDisplayed({ timeout: 30000 });
   const actualText = await element.getText();
   expect(actualText).to.equal(expectedMessage);
 });

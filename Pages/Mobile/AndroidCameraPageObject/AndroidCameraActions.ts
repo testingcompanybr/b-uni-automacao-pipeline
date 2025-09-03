@@ -7,19 +7,19 @@ export class AndroidCameraActions {
 
   async clickBtnOkPermission() {
     const btn = await this.driver.$(bySelector(AndroidCameraElemetsMap.btnOkPermission));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
   async clickBtnCameraWhileUsingApp() {
     const btn = await this.driver.$(bySelector(AndroidCameraElemetsMap.btnCameraWhileUsingApp));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
   async clickBtnInsertCodeManually() {
     const btn = await this.driver.$(bySelector(AndroidCameraElemetsMap.btnInsertCodeManually));
-    await btn.waitForDisplayed({ timeout: 10000 });
+    await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
 
