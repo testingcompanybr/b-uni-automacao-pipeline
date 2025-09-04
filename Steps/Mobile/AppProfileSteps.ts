@@ -6,3 +6,8 @@ When('clico no botão Sair na tela de Perfil do App', async function (this: Worl
   const profileActions = new ProfileActions(this.mobileDriver!);
   await profileActions.clickExitButton();
 });
+
+When('clico no botão Multi acesso na tela de Perfil do App', async function (this: World) {
+  const profileActions = new ProfileActions(this.mobileDriver!);
+  await profileActions.clickMultiAccessButton();
+});

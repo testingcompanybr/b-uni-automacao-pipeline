@@ -36,6 +36,20 @@ export function CPFGenerator(): string {
   return cpfNumeros.join('').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 }
 
+export function LoginGenerator(): string {
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let login = 'a';
+
+  const length = Math.floor(Math.random() * 5) + 6;
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    login += chars[randomIndex];
+  }
+
+  return login;
+}
+
 export function CNPJGenerator(): string {
   const gerarDigito = (cnpjParcial: number[]): number => {
     const pesos = cnpjParcial.length === 12

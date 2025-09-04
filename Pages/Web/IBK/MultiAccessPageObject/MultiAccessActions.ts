@@ -1,8 +1,9 @@
 import { WebDriver, WebElement, By, until } from 'selenium-webdriver';
 import { MultiAccessElementsMap } from './MultiAccessElementsMap';
-import { waitForLoadingToDisappear } from '../../../../Support/Utils';
+import { waitForLoadingToDisappear, LoginGenerator } from '../../../../Support/Utils';
+import { World } from '../../../../Support/World';
 
-export class MultiAccessActions {constructor(private driver: WebDriver) {}
+export class MultiAccessActions {constructor(private driver: WebDriver, private world: World) {}
 
 private async waitForElement(locator: By, timeout: number = 25000): Promise<WebElement> {
     return this.driver.wait(until.elementLocated(locator), timeout);
@@ -42,6 +43,18 @@ async fillLogin(login: string): Promise<void> {
     await loginInput.sendKeys(login);
 }
 
+async fillLoginRandom(): Promise<void> {
+    const generatedLogin: string = LoginGenerator();
+    const loginInput: WebElement = await this.waitForElement(MultiAccessElementsMap.inputLogin);
+    await loginInput.sendKeys(generatedLogin);
+    this.world.storedValues.set('generatedLogin', generatedLogin);
+    console.log(`💾 login gerado armazenado no World: ${generatedLogin}`);
+}
+
+getStoredValue(key: string): string | undefined {
+    return this.world.storedValues.get(key);
+}
+
 async fillPassword(password: string): Promise<void> {
     const passwordInput: WebElement = await this.waitForElement(MultiAccessElementsMap.inputPassword);
     await passwordInput.sendKeys(password);
@@ -51,7 +64,6 @@ async clickUserCardByLogin(login: string): Promise<void> {
     const userCardLocator = MultiAccessElementsMap.cardByLogin(login);
     const userCard: WebElement = await this.waitForElement(userCardLocator);
     await userCard.click();
-
 }
 
 async clickBtnRemoveUser(): Promise<void> {

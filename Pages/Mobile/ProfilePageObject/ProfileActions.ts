@@ -17,4 +17,15 @@ export class ProfileActions {
     await btn.click();
   }
 
+  async clickMultiAccessButton() {
+    const profilebtn = await this.driver.$(bySelector(ProfileElementsMap.btnProfile));
+    await profilebtn.waitForDisplayed({ timeout: 30000 });
+    
+    await swipeUp(this.driver);
+
+    const btn = await this.driver.$(bySelector(ProfileElementsMap.btnMultiAccess));
+    await btn.waitForDisplayed({ timeout: 30000 });
+    await btn.click();
+  }
+
 }
