@@ -8,5 +8,6 @@ export const HomeElementsMap = {
   txtTransactionSent: 'android=new UiSelector().text("Transação realizada com sucesso")',
   txtLimitReached: 'android=new UiSelector().resourceId("br.com.fintech.novo.buni.stg.digital:id/snackbar_text")',
   btnTransfer: 'android=new UiSelector().description("Transferir")',
-  btnTransferTED: 'android=new UiSelector().description("TED, Realize transferências bancárias para contas em outras instituições financeiras")'
+  btnTransferTED: 'android=new UiSelector().description("TED, Realize transferências bancárias para contas em outras instituições financeiras")',
+  btnSeeExtract: 'android=new UiSelector().text("Ver extrato")'
 };

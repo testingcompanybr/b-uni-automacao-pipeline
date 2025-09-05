@@ -46,3 +46,8 @@ When('preencho o campo Login com o valor aleatório na tela de Multi acessos do 
   const multiAccessActions = new MultiAccessActions(this.mobileDriver!);
   await multiAccessActions.fillRandomLogin();
 });
+
+When('clico no botão Deletar usuário na tela de Multi acessos do App', async function (this: World) {
+  const multiAccessActions = new MultiAccessActions(this.mobileDriver!);
+  await multiAccessActions.clickDeleteUser();
+});

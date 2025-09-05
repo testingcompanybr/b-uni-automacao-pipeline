@@ -74,4 +74,10 @@ export class MultiAccessActions {
     await checkbox.waitForDisplayed({ timeout: 30000 });
     await checkbox.click();
   }
+
+  async clickDeleteUser() {
+    const btn = await this.driver.$(bySelector(MultiAccessElementsMap.btnDeleteUser));
+    await btn.waitForDisplayed({ timeout: 30000 });
+    await btn.click();
+  }
 }

@@ -46,4 +46,15 @@ export class HomeActions {
     await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
+
+  async waitForSnackbarToDisappear() {
+    const snackbar = await this.driver.$('android=new UiSelector().resourceId("br.com.fintech.novo.buni.stg.digital:id/snackbar_text")');
+    await snackbar.waitForDisplayed({ reverse: true, timeout: 10000 });
+  }
+
+  async clickBtnSeeExtract() {
+    const btn = await this.driver.$(bySelector(HomeElementsMap.btnSeeExtract));
+    await btn.waitForDisplayed({ timeout: 30000 });
+    await btn.click();
+  }
 }

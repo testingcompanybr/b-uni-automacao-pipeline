@@ -69,3 +69,13 @@ When('clico no botão TED na tela de Home do App', async function (this: World) 
   const homeActions = new HomeActions(this.mobileDriver!);
   await homeActions.clickBtnTransferTED();
 });
+
+When('aguardo a mensagem de transação realizada com sucesso sumir da tela de app', async function (this: World) {
+  const homeActions = new HomeActions(this.mobileDriver!);
+  await homeActions.waitForSnackbarToDisappear();
+});
+
+When('clico no botão Ver extrato na tela de Home do App', async function (this: World) {
+  const homeActions = new HomeActions(this.mobileDriver!);
+  await homeActions.clickBtnSeeExtract();
+});

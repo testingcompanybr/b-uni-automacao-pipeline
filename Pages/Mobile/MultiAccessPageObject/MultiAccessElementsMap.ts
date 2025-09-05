@@ -7,4 +7,5 @@ export const MultiAccessElementsMap = {
   inputLogin: 'android=new UiSelector().className("android.widget.EditText").instance(0)',
   inputPassword: 'android=new UiSelector().className("android.widget.EditText").instance(1)',
   checkBoxAllAccess: 'accessibility id:Todos os acessos',
+  btnDeleteUser: "accessibility id:, Deletar usuário, Essa ação não pode ser revertida",
 };
