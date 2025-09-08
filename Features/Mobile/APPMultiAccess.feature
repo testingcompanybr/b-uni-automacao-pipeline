@@ -30,7 +30,7 @@ Funcionalidade: Multi acesso aplicativo
     E clico no botão Continuar na tela de Multi acessos do App
     E marco o checkbox Todos os acessos na tela de Multi acessos do App
     E clico no botão Continuar na tela de Multi acessos do App
-    #Então verifico se o usuário com login "teste33" foi criado na tela de Multi acessos do App
+    Então verifico se o usuário com login gerado aleatoriamente foi criado na tela de Multi acessos do App
 
   Cenário: Criar Conta para multi acesso e apagar no aplicativo
     Dado que estou na tela de Home do App
@@ -48,6 +48,6 @@ Funcionalidade: Multi acesso aplicativo
     E clico no botão Continuar na tela de Multi acessos do App
     E marco o checkbox Todos os acessos na tela de Multi acessos do App
     E clico no botão Continuar na tela de Multi acessos do App
-    #E clico no card do usuário com login gerado anteriormente na tela de Multi acessos do App
-    #E clico no botão Deletar usuário na tela de Multi acessos do App
-    #Então o card do usuário com login gerado anteriormente não deve mais estar visível na tela de Multi acessos do App
+    E clico no card do usuário com login gerado anteriormente na tela de Multi acessos do App
+    E clico no botão Deletar usuário na tela de Multi acessos do App
+    Então o card do usuário com login gerado anteriormente não deve mais estar visível na tela de Multi acessos do App
