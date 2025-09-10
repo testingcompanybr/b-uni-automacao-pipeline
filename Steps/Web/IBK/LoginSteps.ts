@@ -44,3 +44,8 @@ Then('verifico que estou na tela de Login', async function (this: World) {
 When('vou para a página de Login do IBK', async function (this: World) {
   await goToLoginPage(this.driver as WebDriver);
 });
+
+When('preencho o campo CPF com o login gerado através do multi acesso', async function (this: World) {
+  const loginActions = new LoginActions(this.driver as WebDriver);
+  await loginActions.fillMultiaccessStoredLogin();
+});

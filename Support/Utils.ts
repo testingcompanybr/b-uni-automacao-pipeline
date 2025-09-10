@@ -170,10 +170,8 @@ export async function waitForLoadingToDisappear(driver: WebDriver, timeout = 300
   try {
     const loadingLocator = By.css('.loading, .spinner, .loader');
 
-    // Espera até o elemento aparecer (caso o loading esteja presente)
     await driver.wait(until.elementLocated(loadingLocator), 3000).catch(() => null);
 
-    // Se apareceu, aguarda até sumir
     await driver.wait(async () => {
       const elements = await driver.findElements(loadingLocator);
       if (elements.length === 0) return true;

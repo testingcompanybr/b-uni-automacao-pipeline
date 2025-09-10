@@ -2,6 +2,7 @@ import { WebDriver, WebElement, By, until } from 'selenium-webdriver';
 import { MultiAccessElementsMap } from './MultiAccessElementsMap';
 import { waitForLoadingToDisappear, LoginGenerator } from '../../../../Support/Utils';
 import { World } from '../../../../Support/World';
+import { saveLogin } from '../../../../Support/LoginStorage';
 
 export class MultiAccessActions {constructor(private driver: WebDriver, private world: World) {}
 
@@ -48,6 +49,7 @@ async fillLoginRandom(): Promise<void> {
     const loginInput: WebElement = await this.waitForElement(MultiAccessElementsMap.inputLogin);
     await loginInput.sendKeys(generatedLogin);
     this.world.storedValues.set('generatedLogin', generatedLogin);
+    await saveLogin(generatedLogin);
     console.log(`💾 login gerado armazenado no World: ${generatedLogin}`);
 }
 
