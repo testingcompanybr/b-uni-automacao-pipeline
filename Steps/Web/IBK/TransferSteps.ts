@@ -53,3 +53,8 @@ Then('a mensagem {string} deve ser exibida na tela de Transferência na etapa de
   const textMessage = await element.getText();
   expect(textMessage).to.equal(message);
 });
+
+When('clico no botão PARA b.Uni na tela de Transferência na etapa de Tipo de Transferência', async function (this: World) {
+  const transferActions = new TransferActions(this.driver as WebDriver);
+  await transferActions.clickBtnBUNI();
+});

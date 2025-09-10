@@ -57,5 +57,9 @@ async clickBtnConfirmPopUp(): Promise<void> {
     await btnConfirmPopUp.click();
 }
 
+async clickBtnBUNI(): Promise<void> {
+    const btnBUNI: WebElement = await this.waitForElement(TransferElementsMap.btnBUNI);
+    await btnBUNI.click();
+}
 
 }

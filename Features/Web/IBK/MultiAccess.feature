@@ -1,6 +1,6 @@
 # language: pt
-@web @ibkMultiAcesso
-Funcionalidade: Multi acesso
+@web @ibkMultiacesso
+Funcionalidade: Multiacesso
 
   Contexto: Logar no Internet Banking
     Dado que estou na página de Login
@@ -10,7 +10,7 @@ Funcionalidade: Multi acesso
     E preencho o campo Código com o valor "576439"
     E clico no botão Entrar da tela de Solicitar SMS
 
-  Cenário: Criar Conta para multi acesso
+  Cenário: Criar Conta para multiacesso
     Dado estou na página Home do Internet Banking
     Quando clico no botão de Minha conta na tela de Home
     E clico no botão Multi acessos na tela de Minha conta
@@ -25,7 +25,7 @@ Funcionalidade: Multi acesso
     E clico no botão Continuar na tela de Permissões multi acesso
     Então verifico se o usuário com login gerado anteriormente foi criado na tela de Multi acessos
 
-  # Cenário: Criar Conta para multi acesso e apagar
+  # Cenário: Criar Conta para multiacesso e apagar
   #   Dado estou na página Home do Internet Banking
   #   Quando clico no botão de Minha conta na tela de Home
   #   E clico no botão Multi acessos na tela de Minha conta

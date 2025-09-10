@@ -3,6 +3,7 @@ import { By } from 'selenium-webdriver';
 export const TransferElementsMap = {
   //Tipo Transferência------------------------------------------------------------------------------------------------------------------
   btnTED: By.xpath("//div[contains(@class, 'action-display__action__options__container')]//p[contains(@class, 'action-display__action__options__title') and text()='TED']"),
+  btnBUNI: By.xpath("//div[contains(@class, 'action-display__action__options__container')]//p[contains(@class, 'action-display__action__options__title') and text()='PARA b.Uni']"),
   //Conta para Transferência-------------------------------------------------------------------------------------------------------------
   inputSearchByName: By.xpath("//input[@placeholder='Busca por nome, CPF ou CNPJ' and contains(@class, 'contact-list__header__input')]"),
   searchContactResult: By.css("div.contact-list-item__contacts__list"),
