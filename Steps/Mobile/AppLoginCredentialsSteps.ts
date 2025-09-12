@@ -26,3 +26,8 @@ When('clico no botão Agora não no dialogo do FaceID na tela de Login do App', 
   const loginCredencialsActions = new LoginCredencialsActions(this.mobileDriver!);
   await loginCredencialsActions.clickNotNowFaceIDButton();
 });
+
+When('preencho o campo CPF com o valor login gerado através do multi acesso na tela de Login do App', async function (this: World) {
+  const loginCredencialsActions = new LoginCredencialsActions(this.mobileDriver!);
+  await loginCredencialsActions.fillMultiaccessStoredLogin();
+});

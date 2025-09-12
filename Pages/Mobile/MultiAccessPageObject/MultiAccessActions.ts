@@ -3,6 +3,7 @@ import { MultiAccessElementsMap } from './MultiAccessElementsMap';
 import { bySelector } from '../../../Support/MobileUtils';
 import { swipeUp } from '../../../Support/MobileUtils';
 import { LoginGenerator } from '../../../Support/Utils';
+import { saveLogin } from '../../../Support/LoginStorageMobile';
 
 export class MultiAccessActions {
   constructor(private driver: Browser, private world: any) { }
@@ -51,6 +52,7 @@ export class MultiAccessActions {
   async fillRandomLogin() {
     const login = LoginGenerator();
     this.world.storedValues.set('RandomLoginMobile', login);
+    await saveLogin(login);
 
     const input = await this.world.driver.$(bySelector(MultiAccessElementsMap.inputLogin));
     await input.waitForDisplayed({ timeout: 30000 });

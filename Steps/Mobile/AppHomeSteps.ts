@@ -79,3 +79,8 @@ When('clico no botão Ver extrato na tela de Home do App', async function (this:
   const homeActions = new HomeActions(this.mobileDriver!);
   await homeActions.clickBtnSeeExtract();
 });
+
+When('clico no botão Para b.uni na tela de Home do App', async function (this: World) {
+  const homeActions = new HomeActions(this.mobileDriver!);
+  await homeActions.clickBtnBuni();
+});

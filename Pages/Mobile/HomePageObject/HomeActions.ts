@@ -57,4 +57,10 @@ export class HomeActions {
     await btn.waitForDisplayed({ timeout: 30000 });
     await btn.click();
   }
+
+  async clickBtnBuni() {
+    const btn = await this.driver.$(bySelector(HomeElementsMap.btnBuni));
+    await btn.waitForDisplayed({ timeout: 30000 });
+    await btn.click();
+  }
 }

@@ -1,6 +1,7 @@
 import { Browser } from 'webdriverio';
 import { LoginCredencialsElementsMap } from './LoginCredencialsElementsMap';
 import { bySelector } from '../../../Support/MobileUtils';
+import { loadLogin } from '../../../Support/LoginStorageMobile';
 
 export class LoginCredencialsActions {
   constructor(private driver: Browser) {}
@@ -10,6 +11,20 @@ export class LoginCredencialsActions {
     await input.waitForDisplayed({ timeout: 30000 });
     await input.clearValue();
     await input.addValue(cpf);
+    await this.driver.hideKeyboard();
+  }
+
+  async fillMultiaccessStoredLogin() {
+    const login = await loadLogin();
+
+    if (!login) {
+      throw new Error('❌ Nenhum login salvo foi encontrado.');
+    }
+
+    const input = await this.driver.$(bySelector(LoginCredencialsElementsMap.inputCPF));
+    await input.waitForDisplayed({ timeout: 30000 });
+    await input.clearValue();
+    await input.addValue(login);
     await this.driver.hideKeyboard();
   }
 

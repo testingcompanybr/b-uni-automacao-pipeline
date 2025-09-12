@@ -9,5 +9,6 @@ export const HomeElementsMap = {
   txtLimitReached: 'android=new UiSelector().resourceId("br.com.fintech.novo.buni.stg.digital:id/snackbar_text")',
   btnTransfer: 'android=new UiSelector().description("Transferir")',
   btnTransferTED: 'android=new UiSelector().description("TED, Realize transferências bancárias para contas em outras instituições financeiras")',
-  btnSeeExtract: 'android=new UiSelector().text("Ver extrato")'
+  btnSeeExtract: 'android=new UiSelector().text("Ver extrato")',
+  btnBuni: 'android=new UiSelector().description("Para b.Uni, Realize transferências entre contas do b.Uni")'
 };
