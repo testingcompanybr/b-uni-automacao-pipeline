@@ -7,6 +7,7 @@
     "test:allure": "npm run test && npm run report:allure:generate && npm run report:allure:open",
     "test:mobile": "npx cucumber-js --tags '@mobile' --config cucumber.js",
     "test:web": "npx cucumber-js --tags 'not @mobile' --config cucumber.js",
+    "test:web:pipeline": "npm run test -- --tags '@ibkLogin'",
     "test:custom": "npx cucumber-js --config cucumber.js",
     "report:allure:generate": "allure generate allure-results --clean -o allure-report",
     "report:allure:open": "allure open allure-report",
