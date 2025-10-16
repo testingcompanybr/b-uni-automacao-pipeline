@@ -36,6 +36,10 @@ jobs:
         env:
           BROWSER: ${{ github.event.inputs.browser }}
 
+      # 6️⃣ Instalar Allure CLI globalmente
+      - name: Install Allure Commandline (global)
+        run: npm install -g allure-commandline --force
+
       # 6️⃣ Gerar relatório Allure (usando seus próprios scripts)
       - name: Generate Allure report
         run: npm run report:allure:generate
