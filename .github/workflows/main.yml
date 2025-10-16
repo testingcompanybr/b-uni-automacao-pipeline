@@ -36,6 +36,13 @@ jobs:
         env:
           BROWSER: ${{ github.event.inputs.browser }}
 
+       # 👇 Instalar Java (necessário para o Allure CLI)
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       # 6️⃣ Instalar Allure CLI globalmente
       - name: Install Allure Commandline (global)
         run: npm install -g allure-commandline --force
