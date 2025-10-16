@@ -1,3 +1,5 @@
+name: 🧪 Selenium Cucumber Tests
+
 on:
   workflow_dispatch:
     inputs:
@@ -33,21 +35,20 @@ jobs:
       - run: npm run test:web:pipeline
         env:
           BROWSER: ${{ github.event.inputs.browser }}
-      # 6️⃣ Gera o relatório Allure
+
+      # 6️⃣ Gerar relatório Allure (usando seus próprios scripts)
       - name: Generate Allure report
-        run: |
-          npx allure generate reports/allure-results --clean -o reports/allure-report
+        run: npm run report:allure:generate
 
-      # 7️⃣ Publica o relatório Allure como artefato
-      - name: Upload Allure Report
+      # 7️⃣ Publicar resultados Allure como artefatos
+      - name: Upload Allure Results
         uses: actions/upload-artifact@v4
         with:
-          name: AllureReport
-          path: reports/allure-report
+          name: allure-results
+          path: allure-results
 
-      # 8️⃣ Publica os resultados de teste (JUnit XML)
-      - name: Upload Allure Results (JUnit XML)
+      - name: Upload Allure Report (HTML)
         uses: actions/upload-artifact@v4
         with:
-          name: AllureResults
-          path: reports/allure-results
+          name: allure-report
+          path: allure-report
