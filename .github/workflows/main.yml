@@ -1,0 +1,53 @@
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        type: choice
+        description: Which browser to test
+        required: true
+        options:
+          - chrome
+          - firefox
+          - edge
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    container:
+      image: node:23
+
+    services:
+      selenium:
+        image: selenium/standalone-${{ github.event.inputs.browser }}
+        options: --shm-size=2gb
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '23'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run test:web:pipeline
+        env:
+          BROWSER: ${{ github.event.inputs.browser }}
+      # 6️⃣ Gera o relatório Allure
+      - name: Generate Allure report
+        run: |
+          npx allure generate reports/allure-results --clean -o reports/allure-report
+
+      # 7️⃣ Publica o relatório Allure como artefato
+      - name: Upload Allure Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: AllureReport
+          path: reports/allure-report
+
+      # 8️⃣ Publica os resultados de teste (JUnit XML)
+      - name: Upload Allure Results (JUnit XML)
+        uses: actions/upload-artifact@v4
+        with:
+          name: AllureResults
+          path: reports/allure-results
