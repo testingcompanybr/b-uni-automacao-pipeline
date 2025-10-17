@@ -26,6 +26,8 @@ jobs:
         options: --shm-size=2gb
 
     steps:
+      - name: Test Selenium connectivity
+        run: curl -s http://selenium:4444/status
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -37,7 +39,7 @@ jobs:
       - run: npm run test:web:pipeline
         env:
           BROWSER: ${{ github.event.inputs.browser }}
-          SELENIUM_REMOTE_URL: http://selenium:4444/wd/hub
+          SELENIUM_REMOTE_URL: http://selenium:4444/
       - name: Setup Java
         uses: actions/setup-java@v4
         with:

@@ -51,14 +51,14 @@ export class World extends CucumberWorld {
       // Pega a URL do Selenium server
     // Local: http://localhost:4444/wd/hub
     // Pipeline GitHub Actions: http://selenium:4444/wd/hub
-    const seleniumUrl = process.env.SELENIUM_REMOTE_URL || 'http://localhost:4444/wd/hub';
+    const seleniumUrl = process.env.SELENIUM_REMOTE_URL || 'http://selenium:4444/';
 
       this.webDriver = await new Builder()
         .forBrowser('chrome')
         .usingServer(seleniumUrl)
         .setChromeOptions(chromeOptions)
         .build();
-        
+
       this.driver = this.webDriver;
       this.activeDriver = this.webDriver;
 
