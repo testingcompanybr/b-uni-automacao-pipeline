@@ -32,6 +32,8 @@ jobs:
           node-version: '23'
           cache: 'npm'
       - run: npm install
+      - name: Ensure allure-results directory exists
+        run: mkdir -p allure-results
       - run: npm run test:web:pipeline
         env:
           BROWSER: ${{ github.event.inputs.browser }}
