@@ -16,10 +16,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-
-    container:
-      image: node:23
-
+    
     services:
       selenium:
         image: selenium/standalone-${{ github.event.inputs.browser }}
