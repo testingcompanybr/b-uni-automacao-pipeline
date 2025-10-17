@@ -41,18 +41,6 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      
-      - name: List allure-results (debug)
-        run: ls -la allure-results || echo "⚠️ allure-results directory empty"
-
-      - name: Check allure-results exists
-        run: |
-          if [ ! -d "allure-results" ] || [ -z "$(ls -A allure-results)" ]; then
-            echo "⚠️ No allure-results found. Did the tests run successfully?"
-            exit 1
-          fi
-
-     
 
       # 6️⃣ Gerar relatório Allure (usando seus próprios scripts)
       - name: Generate Allure report
