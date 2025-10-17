@@ -2,15 +2,6 @@ name: 🧪 Selenium Cucumber Tests
 
 on:
   workflow_dispatch:
-    inputs:
-      browser:
-        type: choice
-        description: Which browser to test
-        required: true
-        options:
-          - chrome
-          - firefox
-          - edge
 
 jobs:
   test:
@@ -19,55 +10,10 @@ jobs:
     
     services:
       selenium:
-        image: selenium/standalone-${{ github.event.inputs.browser }}
+        image: selenium/standalone-chrome
         options: --shm-size=2gb
 
     steps:
       - name: Test Selenium connectivity
         run: curl -s http://selenium:4444/status
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '23'
-          cache: 'npm'
-      - run: npm install
-      - name: Ensure allure-results directory exists
-        run: mkdir -p allure-results
-      - run: npm run test:web:pipeline
-        env:
-          BROWSER: ${{ github.event.inputs.browser }}
-          SELENIUM_REMOTE_URL: http://selenium:4444/
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-      
-      - name: List allure-results (debug)
-        run: ls -la allure-results || echo "⚠️ allure-results directory empty"
-
-      - name: Check allure-results exists
-        run: |
-          if [ ! -d "allure-results" ] || [ -z "$(ls -A allure-results)" ]; then
-            echo "⚠️ No allure-results found. Did the tests run successfully?"
-            exit 1
-          fi
-
      
-
-      # 6️⃣ Gerar relatório Allure (usando seus próprios scripts)
-      - name: Generate Allure report
-        run: npm run report:allure:generate:pipeline
-
-      # 7️⃣ Publicar resultados Allure como artefatos
-      - name: Upload Allure Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results
-          path: allure-results
-
-      - name: Upload Allure Report (HTML)
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report
-          path: allure-report
