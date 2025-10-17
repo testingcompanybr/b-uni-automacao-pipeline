@@ -37,13 +37,15 @@ jobs:
       - run: npm run test:web:pipeline
         env:
           BROWSER: ${{ github.event.inputs.browser }}
-
-       # 👇 Instalar Java (necessário para o Allure CLI)
+          SELENIUM_REMOTE_URL: http://selenium:4444/wd/hub
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+      
+      - name: List allure-results (debug)
+        run: ls -la allure-results || echo "⚠️ allure-results directory empty"
 
       - name: Check allure-results exists
         run: |

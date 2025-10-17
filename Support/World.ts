@@ -48,7 +48,17 @@ export class World extends CucumberWorld {
       chromeOptions.addArguments('--no-sandbox');
       chromeOptions.addArguments('--disable-dev-shm-usage');
 
-      this.webDriver = await new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
+      // Pega a URL do Selenium server
+    // Local: http://localhost:4444/wd/hub
+    // Pipeline GitHub Actions: http://selenium:4444/wd/hub
+    const seleniumUrl = process.env.SELENIUM_REMOTE_URL || 'http://localhost:4444/wd/hub';
+
+      this.webDriver = await new Builder()
+        .forBrowser('chrome')
+        .usingServer(seleniumUrl)
+        .setChromeOptions(chromeOptions)
+        .build();
+        
       this.driver = this.webDriver;
       this.activeDriver = this.webDriver;
 
