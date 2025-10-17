@@ -45,6 +45,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Check allure-results exists
+        run: |
+          if [ ! -d "allure-results" ] || [ -z "$(ls -A allure-results)" ]; then
+            echo "⚠️ No allure-results found. Did the tests run successfully?"
+            exit 1
+          fi
+
      
 
       # 6️⃣ Gerar relatório Allure (usando seus próprios scripts)
