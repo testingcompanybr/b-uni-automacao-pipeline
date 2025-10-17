@@ -49,7 +49,7 @@ jobs:
 
       # 6️⃣ Gerar relatório Allure (usando seus próprios scripts)
       - name: Generate Allure report
-        run: npm run report:allure:generate:pipeline
+        run: npm run report:allure:generate
 
       # 7️⃣ Publicar resultados Allure como artefatos
       - name: Upload Allure Results
