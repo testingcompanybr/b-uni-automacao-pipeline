@@ -44,7 +44,7 @@ export class World extends CucumberWorld {
       console.log('💻 Iniciando driver web');
       const chromeOptions = new chrome.Options();
       // chromeOptions.addArguments('--start-maximized');
-      chromeOptions.addArguments('headless');
+      chromeOptions.addArguments('--headless');
 
       this.webDriver = await new Builder().forBrowser('chrome').setChromeOptions(chromeOptions).build();
       this.driver = this.webDriver;
