@@ -23,8 +23,6 @@ jobs:
         options: --shm-size=2gb
 
     steps:
-      - name: Test Selenium connectivity
-        run: curl -s http://selenium:4444/status
         
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
