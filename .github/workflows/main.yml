@@ -32,7 +32,7 @@ jobs:
       - run: npm install
       - name: Ensure allure-results directory exists
         run: mkdir -p allure-results
-      - run: npm run test:web:pipeline
+      - run: npx cucumber-js --tags "@ibkLogin" --config cucumber.js
         env:
           BROWSER: ${{ github.event.inputs.browser }}
           SELENIUM_REMOTE_URL: http://selenium:4444/
